@@ -264,16 +264,16 @@ site:
         lifetime:
             name: Lifetime
             per: once
-            note: One payment, Pro forever.
+            note: One payment, Pro forever. On sale for a limited time only.
             cta: Get Pro for life
     pricing:
         title: Turnario pricing
-        description: The shift calendar is free. Turnario Pro starts at %price% a month, or one payment for life.
+        description: The shift calendar is free. Turnario Pro starts at %price% a month.
         headline: <strong>Simple</strong> pricing.
         intro: Basic is free and stays free. Pro unlocks everything, with a %days%-day trial on the monthly and yearly plans.
         loyal:
             title: Coming from the old Turnario apps?
-            body: "Import your data or use an invite code: the first year of yearly Pro at %first_year% (then %yearly%), or Pro forever at %lifetime% within %days% days."
+            body: "Import your data or use an invite code: the first year of yearly Pro at %first_year% (then %yearly%) and, for %days% days, Pro forever at %lifetime%."
         group:
             title: A union or an association?
             body: "From %members% members up, each one gets yearly Pro at %price% with the code of the group. Write to us from the Support page."

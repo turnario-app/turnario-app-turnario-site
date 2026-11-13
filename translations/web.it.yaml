@@ -264,16 +264,16 @@ site:
         lifetime:
             name: Per sempre
             per: una volta
-            note: Un solo pagamento, Pro per sempre.
+            note: Un solo pagamento, Pro per sempre. In vendita solo per un periodo limitato.
             cta: Prendi Pro per sempre
     pricing:
         title: Prezzi di Turnario
-        description: Il calendario dei turni è gratis. Turnario Pro costa da %price% al mese, oppure con un solo pagamento per sempre.
+        description: Il calendario dei turni è gratis. Turnario Pro costa da %price% al mese.
         headline: Un prezzo <strong>semplice</strong>.
         intro: Basic è gratis e resta gratis. Pro sblocca tutto, con %days% giorni di prova sui piani mensile e annuale.
         loyal:
             title: Arrivi dalle vecchie app Turnario?
-            body: "Importa i tuoi dati o usa il codice invito: il primo anno di Pro annuale a %first_year% (poi %yearly%), oppure Pro per sempre a %lifetime% entro %days% giorni."
+            body: "Importa i tuoi dati o usa il codice invito: il primo anno di Pro annuale a %first_year% (poi %yearly%) e, per %days% giorni, Pro per sempre a %lifetime%."
         group:
             title: Sindacato o associazione?
             body: "Da %members% iscritti in su, ognuno ha Pro annuale a %price% con il codice del gruppo. Scrivici dalla pagina Supporto."

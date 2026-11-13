@@ -28,10 +28,6 @@
       "amount": 999,
       "renewalAmount": 1499
     },
-    "lifetime": {
-      "amount": 2499,
-      "renewalAmount": null
-    },
     "group": {
       "amount": 999,
       "renewalAmount": 999
@@ -86,5 +82,7 @@
     "App\\Enum\\PriceOfferEnum::LIFETIME_DAYS": 90,
     "App\\Enum\\InviteCodeKindEnum::GROUP_MIN_MEMBERS": 50,
     "App\\Enum\\FeatureEnum::TRANS_PREFIX": "feature"
-  }
+  },
+  "lifetimeAmount": 3499,
+  "lifetimeDays": 90
 }

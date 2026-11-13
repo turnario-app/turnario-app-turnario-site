@@ -18,8 +18,8 @@
                 {{ 'site.pricing.loyal.body'|trans({
                     '%first_year%': price(offers.firstYear.amount, locale),
                     '%yearly%': price(offers.firstYear.renewalAmount, locale),
-                    '%lifetime%': price(offers.lifetime.amount, locale),
-                    '%days%': constant('App\\Enum\\PriceOfferEnum::LIFETIME_DAYS'),
+                    '%lifetime%': price(lifetimeAmount, locale),
+                    '%days%': lifetimeDays,
                 }, 'web', locale) }}</p>
                 <p><strong>{{ 'site.pricing.group.title'|trans({}, 'web', locale) }}</strong>
                 {{ 'site.pricing.group.body'|trans({
