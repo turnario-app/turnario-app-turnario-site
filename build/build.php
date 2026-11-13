@@ -154,6 +154,8 @@ $context = [
     'plans' => $plans,
     'offers' => $catalog['offers'],
     'monthlyAmount' => $catalog['monthlyAmount'],
+    'lifetimeAmount' => $catalog['lifetimeAmount'],
+    'lifetimeDays' => $catalog['lifetimeDays'],
     'version' => $config['legalVersion'],
     'contactEmail' => $config['legalContactEmail'],
 ];
