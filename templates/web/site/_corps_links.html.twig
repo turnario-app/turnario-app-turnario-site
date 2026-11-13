@@ -1,0 +1,6 @@
+{# The four corps, each linking its landing page (/turni-…), in the colour of its app. #}
+<ul class="corps">
+    {% for landing in enum_cases('App\\Enum\\CorpsLandingEnum') %}
+        <li style="--c: {{ landing.tint }}"><a href="{{ path('web_corps', {slug: landing.value}) }}"><span></span>{{ ('app.' ~ landing.app.value)|trans({}, 'enums', locale) }}</a></li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,12 @@
+{# Where to get Turnario: the store badges and the web app. Until the stores and the web app have a URL (env) the section says the apps are coming and links the waiting list. #}
+{% include 'web/_store_badges.html.twig' with {iosStoreUrl: site.iosStoreUrl, androidStoreUrl: site.androidStoreUrl} %}
+{% if not site.iosStoreUrl and not site.androidStoreUrl %}
+    <p class="soon">{{ 'site.download.soon'|trans({}, 'web', locale) }}</p>
+    <p class="actions"><a class="button" href="{{ path('web_waitlist') }}#iscriviti">{{ 'site.download.notify_me'|trans({}, 'web', locale) }}</a></p>
+{% endif %}
+{% if site.webAppUrl %}
+    <p class="actions">
+        <a class="button" href="{{ site.signUpUrl }}">{{ 'site.download.sign_up'|trans({}, 'web', locale) }}</a>
+        <a class="button button--secondary" href="{{ site.webAppUrl }}">{{ 'site.download.open_web'|trans({}, 'web', locale) }}</a>
+    </p>
+{% endif %}

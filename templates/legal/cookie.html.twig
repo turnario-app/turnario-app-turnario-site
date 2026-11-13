@@ -1,0 +1,21 @@
+{% extends 'web/layout.html.twig' %}
+
+{% block title %}Informativa sui cookie di Turnario{% endblock %}
+
+{% block body %}
+    <h1>Informativa sui cookie</h1>
+    {% include 'legal/_draft_notice.html.twig' %}
+
+    <h2>Cosa usiamo</h2>
+    <p>Questo sito non usa cookie di profilazione, pubblicità o statistiche, né strumenti di terze parti che tracciano la navigazione. Per questo non ti mostra un banner: la legge lo chiede solo quando si usano cookie o strumenti simili che non sono strettamente necessari.</p>
+    <ul>
+        <li><strong>Sito pubblico (questo)</strong>: nessun cookie. Non salviamo niente sul tuo dispositivo.</li>
+        <li><strong>App web (accesso)</strong>: un cookie tecnico, <code>turnario_refresh</code>, HttpOnly e valido solo per l'API, che ti tiene collegato; viene creato solo quando accedi. Nel browser salviamo anche, senza inviarli a nessuno, la scelta di nascondere il banner delle app e la tua scelta sui cookie.</li>
+        <li><strong>Accesso con Google</strong> (app web): il pulsante carica uno script di Google, che riceve il tuo indirizzo IP e può usare i suoi cookie. Lo carichiamo solo se lo accetti dal banner o premendo «Continua con Google».</li>
+    </ul>
+
+    <h2>Le tue scelte</h2>
+    <p>I cookie tecnici non richiedono consenso. Per gli altri, il rifiuto è semplice quanto l'accettazione, la scelta vale sei mesi e puoi cambiarla in ogni momento da «Preferenze cookie» nel piè di pagina dell'app web. Puoi anche cancellare i cookie dalle impostazioni del browser.</p>
+
+    <p class="muted">Per i dati personali leggi l'<a href="{{ path('web_privacy') }}">informativa sulla privacy</a>. Domande: <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.</p>
+{% endblock %}

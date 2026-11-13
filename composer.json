@@ -1,0 +1,16 @@
+{
+    "name": "turnario-app/turnario-app-turnario-site",
+    "description": "Static public site of Turnario (turnario.app), built with Twig and published on GitHub Pages",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.3",
+        "ext-intl": "*",
+        "twig/twig": "^3.14",
+        "symfony/filesystem": "^7.3",
+        "symfony/translation": "^7.3",
+        "symfony/yaml": "^7.3"
+    },
+    "config": {"sort-packages": true},
+    "scripts": {"build": "php build/build.php"}
+}

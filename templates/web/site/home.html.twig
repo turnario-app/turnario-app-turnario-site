@@ -1,0 +1,86 @@
+{% extends 'web/site/_page.html.twig' %}
+
+{% block title %}{{ 'site.home.title'|trans({}, 'web', locale) }}{% endblock %}
+{% block description %}{{ 'site.home.description'|trans({}, 'web', locale) }}{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="wrap hero__grid">
+            <div class="reveal">
+                <p class="eyebrow">{{ 'site.home.eyebrow'|trans({}, 'web', locale) }}</p>
+                <h1>{{ 'site.home.headline'|trans({}, 'web', locale)|raw }}</h1>
+                <p class="lead">{{ 'site.home.intro'|trans({}, 'web', locale) }}</p>
+                {% include 'web/site/_download.html.twig' %}
+                <p class="muted hero__note">{{ 'site.home.price_note'|trans({'%price%': price(monthlyAmount, locale), '%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_mockup.html.twig' %}
+        </div>
+    </section>
+
+    <section class="section section--card" aria-labelledby="corps-title">
+        <div class="wrap">
+            <div class="section__head section__head--center">
+                <h2 id="corps-title">{{ 'site.home.corps.title'|trans({}, 'web', locale) }}</h2>
+                <p class="lead">{{ 'site.home.corps.body'|trans({}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_corps_links.html.twig' %}
+        </div>
+    </section>
+
+    <section class="section" aria-label="{{ 'site.home.values.label'|trans({}, 'web', locale) }}">
+        <div class="wrap">
+            <ul class="values">
+                {% for value in ['automatic', 'everything', 'everywhere'] %}
+                    <li><strong>{{ ('site.home.values.' ~ value ~ '.title')|trans({}, 'web', locale) }}</strong>{{ ('site.home.values.' ~ value ~ '.body')|trans({}, 'web', locale) }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+        <div class="wrap">
+            <div class="section__head">
+                <p class="eyebrow">{{ 'site.home.steps.eyebrow'|trans({}, 'web', locale) }}</p>
+                <h2 id="steps-title">{{ 'site.home.steps.title'|trans({}, 'web', locale) }}</h2>
+            </div>
+            <ol class="steps">
+                {% for step in ['pattern', 'mark', 'count'] %}
+                    <li><h3>{{ ('site.home.steps.' ~ step ~ '.title')|trans({}, 'web', locale) }}</h3><p>{{ ('site.home.steps.' ~ step ~ '.body')|trans({}, 'web', locale) }}</p></li>
+                {% endfor %}
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section--card" aria-labelledby="features-title">
+        <div class="wrap">
+            <div class="section__head">
+                <p class="eyebrow">{{ 'site.nav.features'|trans({}, 'web', locale) }}</p>
+                <h2 id="features-title">{{ 'site.home.features.title'|trans({}, 'web', locale) }}</h2>
+                <p><a href="{{ path('web_features') }}">{{ 'site.home.features.more'|trans({}, 'web', locale) }} ›</a></p>
+            </div>
+            {% include 'web/site/_feature_grid.html.twig' %}
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="prices-title">
+        <div class="wrap">
+            <div class="section__head section__head--center">
+                <p class="eyebrow">{{ 'site.nav.pricing'|trans({}, 'web', locale) }}</p>
+                <h2 id="prices-title">{{ 'site.home.prices.title'|trans({}, 'web', locale) }}</h2>
+                <p class="lead">{{ 'site.home.prices.body'|trans({}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_plans.html.twig' %}
+            <p class="contact"><a href="{{ path('web_pricing') }}">{{ 'site.home.prices.more'|trans({}, 'web', locale) }} ›</a></p>
+        </div>
+    </section>
+
+    <section class="section" id="scarica" aria-labelledby="download-title">
+        <div class="wrap">
+            <div class="cta">
+                <h2 id="download-title">{{ 'site.download.title'|trans({}, 'web', locale) }}</h2>
+                <p>{{ 'site.download.body'|trans({}, 'web', locale) }}</p>
+                {% include 'web/site/_download.html.twig' %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

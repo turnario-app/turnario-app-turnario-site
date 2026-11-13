@@ -1,0 +1,16 @@
+app:
+    PS: Police
+    VVF: Fire Brigade
+    CC: Carabinieri
+    TS: Sanità
+    GDF: Guardia di Finanza
+
+role:
+    ROLE_ADMIN: Admin
+    ROLE_USER: User
+
+feature:
+    diary: Diary of days, notes and activities
+    types: Personal activity types
+    year_banks: Hour and day banks
+    reports: Reports, CSV export and estimate in euros

@@ -1,0 +1,9 @@
+{# Questions and answers, open one at a time without a script. `questions` lists the keys under site.faq. #}
+<div class="faq">
+    {% for question in questions %}
+        <details>
+            <summary>{{ ('site.faq.' ~ question ~ '.q')|trans({}, 'web', locale) }}</summary>
+            <p>{{ ('site.faq.' ~ question ~ '.a')|trans({'%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale) }}</p>
+        </details>
+    {% endfor %}
+</div>

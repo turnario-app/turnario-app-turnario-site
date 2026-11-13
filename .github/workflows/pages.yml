@@ -1,0 +1,50 @@
+name: Deploy site
+
+# Builds the static site and publishes it on GitHub Pages (www.turnario.app, from the CNAME in dist/).
+# Production only: the QA site is built with `php build/build.php --env=qa` and served by the QA service (docs in README).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: intl, mbstring
+          tools: composer:v2
+      - run: composer install --no-interaction --prefer-dist --no-progress
+      - run: php build/build.php --env=prod
+      - name: Check the build
+        run: |
+          test -f dist/index.html && test -f dist/en/index.html && test -f dist/CNAME
+          ! grep -rl '{{\|{%' dist --include=*.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

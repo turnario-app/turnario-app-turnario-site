@@ -1,0 +1,26 @@
+{# Six features with the plan that includes them. The Pro ones are the FeatureEnum cases, the same list that GET /api/plans gives the apps. #}
+{% set icons = {
+    calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/>',
+    diary: '<path d="M6 4h9l3 3v13H6z"/><path d="M9 11h6M9 15h4"/>',
+    types: '<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="8" cy="16" r="3"/><circle cx="16" cy="16" r="3"/>',
+    year_banks: '<path d="M4 10l8-5 8 5"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8M4 20h16"/>',
+    reports: '<path d="M5 20V10M10 20V5M15 20v-7M20 20V8"/>',
+    devices: '<rect x="2.5" y="5" width="13" height="10" rx="2"/><path d="M6 19h6"/><rect x="17.5" y="8" width="4.5" height="11" rx="1.5"/>',
+} %}
+{% set items = [
+    {key: 'calendar', pro: false},
+    {key: 'diary', pro: true},
+    {key: 'types', pro: true},
+    {key: 'year_banks', pro: true},
+    {key: 'reports', pro: true},
+    {key: 'devices', pro: false},
+] %}
+<ul class="grid">
+    {% for item in items %}
+        <li class="feature">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{{ icons[item.key]|raw }}</svg></span>
+            <h3>{{ ('site.features.' ~ item.key ~ '.title')|trans({}, 'web', locale) }} <span class="tag{% if item.pro %} tag--pro{% endif %}">{{ item.pro ? 'Pro' : 'Basic' }}</span></h3>
+            <p>{{ ('site.features.' ~ item.key ~ '.body')|trans({}, 'web', locale) }}</p>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,175 @@
+{# Layout of every public page: the site (home, features, prices, support), the email links and the legal texts. No external assets, readable on a phone, same look as the apps and the web app. #}
+{% set lang = locale|default('it') %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    {% block robots %}<meta name="robots" content="noindex">{% endblock %}
+    <meta name="theme-color" content="#455a64">
+    <title>{% block title %}Turnario{% endblock %}</title>
+    {% block meta %}{% endblock %}
+    <style>
+        :root { color-scheme: light dark; --tint: #455a64; --tint-contrast: #fff; --text: #1d1d1f; --muted: #6e6e73; --bg: #f2f2f7; --card: #fff; --fill: rgba(120, 120, 128, .12); --border: rgba(60, 60, 67, .18); --bar: rgba(249, 249, 249, .78); --danger: #d70015; --shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px rgba(0, 0, 0, .06); --ease: cubic-bezier(.32, .72, 0, 1); }
+        @media (prefers-color-scheme: dark) { :root { --tint: #90a4ae; --text: #f5f5f7; --muted: #98989f; --bg: #000; --card: #1c1c1e; --fill: rgba(120, 120, 128, .24); --border: rgba(84, 84, 88, .55); --bar: rgba(28, 28, 30, .72); --danger: #ff453a; --shadow: 0 1px 2px rgba(0, 0, 0, .4); } }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.45 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+        a { color: var(--tint); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        :focus-visible { outline: 3px solid color-mix(in srgb, var(--tint) 55%, transparent); outline-offset: 2px; border-radius: 6px; }
+        .skip { position: absolute; left: -9999px; }
+        .skip:focus { left: 16px; top: 8px; z-index: 20; padding: 8px 12px; background: var(--card); border-radius: 8px; }
+        header.bar { position: sticky; top: 0; z-index: 10; padding: env(safe-area-inset-top) 16px 0; background: var(--bar); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--border); }
+        .bar__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; max-width: 1080px; margin: 0 auto; }
+        .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+        .brand:hover { text-decoration: none; }
+        .brand__mark { width: 30px; height: 30px; border-radius: 8px; background: var(--tint); display: grid; place-items: center; color: var(--tint-contrast); }
+        .brand__mark svg { width: 17px; height: 17px; }
+        .nav { display: flex; align-items: center; gap: 4px; }
+        .nav__links { display: none; align-items: center; gap: 4px; margin: 0; padding: 0; list-style: none; }
+        .nav__links a, .menu a { display: block; padding: 8px 12px; border-radius: 10px; color: var(--text); font-size: 15px; }
+        .nav__links a:hover, .menu a:hover { background: var(--fill); text-decoration: none; }
+        .nav__links a[aria-current=page] { color: var(--tint); font-weight: 600; }
+        .nav__cta { display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; margin-left: 4px; border-radius: 999px; background: var(--tint); color: var(--tint-contrast); font-size: 15px; font-weight: 600; }
+        .nav__cta:hover { text-decoration: none; opacity: .9; }
+        .menu { position: relative; }
+        .menu summary { list-style: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; cursor: pointer; color: var(--text); }
+        .menu summary::-webkit-details-marker { display: none; }
+        .menu summary svg { width: 22px; height: 22px; }
+        .menu[open] summary { background: var(--fill); }
+        .menu ul { position: absolute; right: 0; top: 46px; min-width: 220px; margin: 0; padding: 6px; list-style: none; background: var(--card); border-radius: 14px; box-shadow: var(--shadow), 0 0 0 1px var(--border); animation: rise .25s var(--ease); }
+        @media (min-width: 820px) { .nav__links { display: flex; } .menu { display: none; } }
+        main { max-width: 680px; margin: 0 auto; padding: 24px 16px 48px; }
+        main > .card { animation: rise .5s var(--ease) backwards; }
+        .card { background: var(--card); border-radius: 20px; padding: 28px 24px; box-shadow: var(--shadow); }
+        h1 { font-size: 30px; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 14px; }
+        h2 { font-size: 20px; letter-spacing: -.01em; margin: 28px 0 10px; }
+        p, li { color: var(--text); }
+        .lead { color: var(--muted); font-size: 19px; }
+        .muted { color: var(--muted); font-size: 14px; }
+        .notice { background: color-mix(in srgb, var(--tint) 10%, var(--card)); border-radius: 12px; padding: 12px 14px; margin: 0 0 16px; font-size: 15px; }
+        .error { color: var(--danger); font-weight: 600; }
+        label { display: block; font-weight: 600; font-size: 14px; color: var(--muted); margin: 16px 0 6px; }
+        input[type=password], input[type=email] { width: 100%; min-height: 48px; padding: 10px 14px; font: inherit; color: var(--text); background: var(--fill); border: 2px solid transparent; border-radius: 12px; transition: border-color .2s, background-color .2s; }
+        input[type=password]:focus, input[type=email]:focus { outline: none; border-color: var(--tint); background: var(--card); }
+        button, a.button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; font: inherit; font-weight: 600; color: var(--tint-contrast); background: var(--tint); border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; transition: transform .15s var(--ease), opacity .2s; }
+        button { margin-top: 24px; width: 100%; }
+        button.danger { background: var(--danger); color: #fff; }
+        button:hover, a.button:hover { opacity: .9; text-decoration: none; }
+        button:active, a.button:active { transform: scale(.97); }
+        a.button--secondary { background: color-mix(in srgb, var(--tint) 14%, transparent); color: var(--tint); }
+        /* Badges: 48px high (App Store minimum 40, Google Play 28 and not smaller than the other badge), 16px around each (clear space is a quarter of the height). */
+        .badges { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0 0; }
+        .badges .badge { display: block; line-height: 0; }
+        .store-link { font-weight: 600; }
+        .badges img { display: block; height: 48px; width: auto; }
+        .trademarks { margin: 16px 0 0; font-size: 12px; }
+        .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 0; }
+        .strike { text-decoration: line-through; color: var(--muted); }
+        footer.foot { border-top: 1px solid var(--border); padding: 40px 16px calc(32px + env(safe-area-inset-bottom)); }
+        .foot__inner { max-width: 1080px; margin: 0 auto; display: grid; gap: 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .foot__brand { grid-column: 1 / -1; }
+        .foot__brand p { margin: 10px 0 0; max-width: 32ch; }
+        .foot h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+        .foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+        .foot ul a { color: var(--text); font-size: 15px; }
+        .foot__legal { grid-column: 1 / -1; margin: 0; padding-top: 20px; border-top: 1px solid var(--border); }
+        @media (min-width: 720px) { .foot__inner { grid-template-columns: 2fr repeat(4, 1fr); } .foot__brand { grid-column: auto; } }
+        button.linkish { display: inline; min-height: 0; width: auto; margin: 0; padding: 0; background: none; color: var(--text); font-size: 15px; font-weight: 400; border-radius: 0; }
+        @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+        @media (min-width: 720px) { main { padding-top: 48px; } .card { padding: 40px; } h1 { font-size: 40px; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    </style>
+    {% block styles %}{% endblock %}
+</head>
+<body>
+{% set current = app.request ? app.request.attributes.get('_route') : null %}
+{% set links = [
+    {route: 'web_features', label: 'site.nav.features'},
+    {route: 'web_pricing', label: 'site.nav.pricing'},
+    {route: 'web_support', label: 'site.nav.support'},
+] %}
+<a class="skip" href="#content">{{ 'site.nav.skip'|trans({}, 'web', lang) }}</a>
+<header class="bar">
+    <div class="bar__inner">
+        <a class="brand" href="{{ path('web_home') }}">
+            <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+            Turnario
+        </a>
+        <nav class="nav" aria-label="{{ 'site.nav.label'|trans({}, 'web', lang) }}">
+            <ul class="nav__links">
+                {% for link in links %}
+                    <li><a href="{{ path(link.route) }}"{% if current == link.route %} aria-current="page"{% endif %}>{{ link.label|trans({}, 'web', lang) }}</a></li>
+                {% endfor %}
+                {% if site.signInUrl %}<li><a href="{{ site.signInUrl }}">{{ 'site.nav.sign_in'|trans({}, 'web', lang) }}</a></li>{% endif %}
+            </ul>
+            <details class="menu">
+                <summary aria-label="{{ 'site.nav.menu'|trans({}, 'web', lang) }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+                <ul>
+                    {% for link in links %}
+                        <li><a href="{{ path(link.route) }}"{% if current == link.route %} aria-current="page"{% endif %}>{{ link.label|trans({}, 'web', lang) }}</a></li>
+                    {% endfor %}
+                    {% if site.signInUrl %}<li><a href="{{ site.signInUrl }}">{{ 'site.nav.sign_in'|trans({}, 'web', lang) }}</a></li>{% endif %}
+                </ul>
+            </details>
+            <a class="nav__cta" href="{{ path('web_home') }}#scarica">{{ 'site.nav.download'|trans({}, 'web', lang) }}</a>
+        </nav>
+    </div>
+</header>
+{% block main %}
+<main id="content">
+    <div class="card">
+        {% block body %}{% endblock %}
+    </div>
+</main>
+{% endblock %}
+<footer class="foot">
+    <div class="foot__inner">
+        <div class="foot__brand">
+            <a class="brand" href="{{ path('web_home') }}">
+                <span class="brand__mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+                Turnario
+            </a>
+            <p class="muted">{{ 'site.footer.tagline'|trans({}, 'web', lang) }}</p>
+        </div>
+        <div>
+            <h2>{{ 'site.footer.product'|trans({}, 'web', lang) }}</h2>
+            <ul>
+                <li><a href="{{ path('web_features') }}">{{ 'site.nav.features'|trans({}, 'web', lang) }}</a></li>
+                <li><a href="{{ path('web_pricing') }}">{{ 'site.nav.pricing'|trans({}, 'web', lang) }}</a></li>
+                {% if site.webAppUrl %}<li><a href="{{ site.webAppUrl }}">{{ 'site.footer.web_app'|trans({}, 'web', lang) }}</a></li>{% endif %}
+                <li><a href="{{ path('web_home') }}#scarica">{{ 'site.footer.download'|trans({}, 'web', lang) }}</a></li>
+                <li><a href="{{ path('web_waitlist') }}">{{ 'site.footer.waitlist'|trans({}, 'web', lang) }}</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>{{ 'site.footer.corps'|trans({}, 'web', lang) }}</h2>
+            <ul>
+                {% for landing in enum_cases('App\\Enum\\CorpsLandingEnum') %}
+                    <li><a href="{{ path('web_corps', {slug: landing.value}) }}">{{ ('site.corps_page.' ~ landing.app.value|lower ~ '.link')|trans({}, 'web', lang) }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h2>{{ 'site.footer.help'|trans({}, 'web', lang) }}</h2>
+            <ul>
+                <li><a href="{{ path('web_support') }}">{{ 'site.footer.faq'|trans({}, 'web', lang) }}</a></li>
+                {% if site.supportEmail %}<li><a href="mailto:{{ site.supportEmail }}">{{ 'site.footer.contact'|trans({}, 'web', lang) }}</a></li>{% endif %}
+                <li><a href="{{ path('web_delete_account') }}">{{ 'site.footer.delete_account'|trans({}, 'web', lang) }}</a></li>
+            </ul>
+        </div>
+        <div>
+            <h2>{{ 'site.footer.legal'|trans({}, 'web', lang) }}</h2>
+            <ul>
+                <li><a href="{{ path('web_terms') }}">{{ 'site.footer.terms'|trans({}, 'web', lang) }}</a></li>
+                <li><a href="{{ path('web_privacy') }}">{{ 'site.footer.privacy'|trans({}, 'web', lang) }}</a></li>
+                <li><a href="{{ path('web_cookie') }}">{{ 'site.footer.cookie'|trans({}, 'web', lang) }}</a></li>
+                {% if consent.categories %}<li><button type="button" class="linkish" data-consent-open>{{ 'consent.preferences'|trans({}, 'web', lang) }}</button></li>{% endif %}
+            </ul>
+        </div>
+        <p class="muted foot__legal">© {{ 'now'|date('Y') }} Turnario</p>
+    </div>
+</footer>
+{% if consent.categories %}{% include 'web/_consent.html.twig' %}{% endif %}
+</body>
+</html>

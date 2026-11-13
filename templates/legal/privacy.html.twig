@@ -1,0 +1,36 @@
+{% extends 'web/layout.html.twig' %}
+
+{% block title %}Informativa sulla privacy di Turnario{% endblock %}
+
+{% block body %}
+    <h1>Informativa sulla privacy</h1>
+    {% include 'legal/_draft_notice.html.twig' %}
+
+    <h2>1. Chi tratta i dati</h2>
+    <p>Il titolare del trattamento è il gestore di Turnario, che puoi contattare a <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.</p>
+
+    <h2>2. Quali dati trattiamo</h2>
+    <ul>
+        <li>Dati dell'account: nome, cognome, email, password (salvata solo in forma cifrata), corpo di appartenenza, foto profilo se la carichi, e l'identificativo di Apple o Google se accedi con loro.</li>
+        <li>Dati che inserisci: turnazione scelta, giorni, attività, note, banche ore e dati importati dalle vecchie app.</li>
+        <li>Dati di acquisto: piano, stato e scadenza dell'abbonamento. I dati di pagamento sono trattati da Apple, Google o dal fornitore di pagamento, non da noi.</li>
+        <li>Preferenze: lingua, fuso orario, notifiche, e la data in cui hai accettato termini e informativa.</li>
+        <li>Lista d'attesa: se ti iscrivi dalla pagina <a href="{{ path('web_waitlist') }}">In arrivo</a>, l'email, il corpo in cui lavori, la risposta facoltativa sul prezzo, il canale da cui arriva il link e la data del consenso. Li usiamo solo per avvisarti del lancio e per sapere quanti interessati ci sono per ogni corpo, sulla base del tuo consenso.</li>
+        <li>Dati tecnici: registri delle email di servizio inviate e dei collegamenti, conservati per la sicurezza del servizio.</li>
+    </ul>
+
+    <h2>3. Perché li trattiamo</h2>
+    <p>Per fornirti il servizio che hai chiesto (esecuzione del contratto), per la sicurezza dell'account e per gli obblighi di legge, per esempio fiscali sugli acquisti. Le email di servizio (conferma dell'indirizzo, recupero password, avvisi sull'abbonamento) non richiedono consenso. Le comunicazioni promozionali partono solo con il tuo consenso esplicito, che puoi revocare quando vuoi.</p>
+
+    <h2>4. A chi li affidiamo</h2>
+    <p>Usiamo fornitori che trattano i dati per nostro conto: l'hosting del servizio e del database nell'Unione europea, lo storage delle foto, il servizio di invio delle email e, se li usi, Apple, Google e il fornitore di pagamento. Non vendiamo i tuoi dati.</p>
+
+    <h2>5. Per quanto tempo</h2>
+    <p>L'iscrizione alla lista d'attesa la conserviamo fino all'email del lancio, poi la cancelliamo. Puoi uscire prima in qualsiasi momento con il link della pagina di conferma o dell'email.</p>
+    <p>Finché hai un account. Quando lo cancelli, i tuoi dati vengono rimossi subito, salvo quelli che la legge ci obbliga a conservare (per esempio i dati fiscali degli acquisti).</p>
+
+    <h2>6. I tuoi diritti</h2>
+    <p>Puoi chiedere l'accesso, la rettifica, la cancellazione, la limitazione e la portabilità dei tuoi dati, e opporti al trattamento. Dall'app puoi già modificare il profilo, scaricare una copia completa dei tuoi dati e cancellare l'account; senza l'app puoi cancellarlo dalla <a href="{{ path('web_delete_account') }}">pagina di cancellazione dell'account</a>. Per il resto scrivi a <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.</p>
+
+    <p class="muted">Leggi anche i <a href="{{ path('web_terms') }}">termini di servizio</a>.</p>
+{% endblock %}

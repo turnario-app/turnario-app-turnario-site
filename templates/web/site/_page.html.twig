@@ -1,0 +1,29 @@
+{# Base of the site pages: indexable, with description, Open Graph and canonical URL on the public domain, and the full-width layout. #}
+{% extends 'web/layout.html.twig' %}
+
+{% block robots %}<meta name="robots" content="index, follow">{% endblock %}
+
+{% block meta %}
+    {% set description = block('description') is defined ? block('description')|trim : '' %}
+    <meta name="description" content="{{ description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Turnario">
+    <meta property="og:title" content="{{ block('title')|trim }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:locale" content="{{ locale == 'it' ? 'it_IT' : 'en_GB' }}">
+    {% if site.baseUrl %}
+        {# Route parameters (the corps of a landing page) are part of the address; the query string (?fonte=) is not. #}
+        {% set canonical = site.baseUrl ~ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+        <link rel="canonical" href="{{ canonical }}">
+        <meta property="og:url" content="{{ canonical }}">
+        {% if alternates|default([]) %}{% for alt in alternates %}<link rel="alternate" hreflang="{{ alt.locale }}" href="{{ alt.url }}">{% endfor %}{% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block styles %}{% include 'web/site/_styles.html.twig' %}{% endblock %}
+
+{% block main %}
+<main id="content" class="site">
+    {% block content %}{% endblock %}
+</main>
+{% endblock %}

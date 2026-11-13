@@ -1,0 +1,552 @@
+verify_email:
+    title: Conferma il tuo indirizzo email
+    intro: Tocca il pulsante per confermare che questo indirizzo è tuo.
+    button: Conferma l'indirizzo
+    done:
+        title: Indirizzo confermato
+        body: Grazie, il tuo indirizzo email è confermato. Puoi tornare all'app.
+    invalid:
+        title: Link non valido
+        body: Il link non è valido, è già stato usato oppure è scaduto. Chiedi una nuova email di conferma dall'app.
+
+reset_password:
+    title: Scegli una nuova password
+    intro: La password deve avere almeno %min% caratteri. Dopo il cambio dovrai accedere di nuovo su tutti i dispositivi.
+    password: Nuova password
+    confirmation: Ripeti la nuova password
+    button: Salva la password
+    mismatch: Le due password non sono uguali.
+    length: La password deve avere da %min% a %max% caratteri.
+    done:
+        title: Password cambiata
+        body: La nuova password è salvata. Torna all'app e accedi con la nuova password.
+    invalid:
+        title: Link non valido
+        body: Il link non è valido, è già stato usato oppure è scaduto. Chiedi una nuova email dalla schermata di accesso dell'app con "Password dimenticata".
+
+delete_account:
+    title: Elimina il tuo account Turnario
+    intro: Puoi eliminare il tuo account Turnario e tutti i dati collegati in qualsiasi momento, gratis e senza dover reinstallare l'app.
+    in_app:
+        title: Dall'app
+        body: Apri Turnario sul telefono o sul web, vai nella scheda Profilo e tocca "Elimina account". L'eliminazione è immediata.
+    on_web:
+        title: Da questa pagina
+        body: Se non hai più l'app, scrivi l'indirizzo email del tuo account. Ti mandiamo un link per confermare la cancellazione, così nessun altro può eliminare il tuo account.
+    deleted:
+        title: Cosa viene eliminato
+        body: Subito e per sempre il profilo, la foto, i giorni con note e attività, i tipi personali, le turnazioni, le banche ore e giorni, i dispositivi e le notifiche, gli account Apple e Google collegati e le sessioni aperte. Togliamo anche il tuo indirizzo dalla lista delle comunicazioni promozionali.
+    kept:
+        title: Cosa resta
+        body: Restano solo i dati che la legge ci obbliga a conservare, cioè quelli fiscali degli acquisti fatti con il pagamento sul web, conservati da Stripe, il fornitore dei pagamenti, per il tempo previsto dalla legge. Gli abbonamenti comprati su App Store o Google Play non si disdicono da soli, disdicili dalle impostazioni del tuo account Apple o Google.
+    email: Email del tuo account
+    button: Inviami il link di conferma
+    invalid_email: Scrivi un indirizzo email valido.
+    sent:
+        title: Controlla la tua email
+        body: Se esiste un account Turnario con questo indirizzo, ti abbiamo mandato un link per confermare la cancellazione. Il link vale %minutes% minuti. Se non trovi l'email, guarda anche nella posta indesiderata.
+    contact: Per qualsiasi problema scrivi a %email%.
+
+confirm_deletion:
+    title: Confermi la cancellazione?
+    intro: Toccando il pulsante il tuo account Turnario e tutti i tuoi dati saranno eliminati per sempre. Non si può annullare.
+    button: Elimina definitivamente
+    done:
+        title: Account eliminato
+        body: Abbiamo eliminato il tuo account Turnario e tutti i dati collegati. Ti abbiamo mandato un'email di conferma.
+    invalid:
+        title: Link non valido
+        body: Il link non è valido, è già stato usato oppure è scaduto. Chiedi un nuovo link dalla pagina di cancellazione dell'account.
+
+billing:
+    success:
+        title: Pagamento ricevuto
+        body: 'Grazie! Torna all''app: il Premium si attiva appena Stripe conferma il pagamento, di solito in pochi secondi.'
+    cancel:
+        title: Acquisto annullato
+        body: 'Non è stato addebitato nulla. Puoi tornare all''app e riprovare quando vuoi.'
+    return:
+        title: Fatto
+        body: 'Torna all''app. Le modifiche all''abbonamento si vedono nell''app in pochi secondi.'
+
+open_app:
+    title: Apri Turnario
+    body: Questo link si apre nell'app Turnario. Se l'app è installata aprilo da questo telefono; altrimenti installala e poi tocca di nuovo il link.
+    invite: 'Il tuo codice invito, da inserire nell''app dopo l''installazione:'
+    install: Installa l'app
+    ios: Scarica per iPhone
+    android: Scarica per Android
+
+badges:
+    ios_alt: Scarica su App Store
+    android_alt: Disponibile su Google Play
+    apple: 'Apple e il logo Apple sono marchi di Apple Inc., registrati negli Stati Uniti e in altri Paesi. App Store è un marchio di servizio di Apple Inc.'
+    google: 'Google Play e il logo di Google Play sono marchi di Google LLC.'
+
+site:
+    nav:
+        label: Menu principale
+        menu: Apri il menu
+        skip: Vai al contenuto
+        features: Funzioni
+        pricing: Prezzi
+        support: Supporto
+        sign_in: Accedi
+        download: Scarica
+    footer:
+        tagline: Il calendario dei turni per chi lavora in Polizia di Stato, Vigili del Fuoco, Carabinieri e Sanità.
+        product: Prodotto
+        web_app: App web
+        download: Scarica l'app
+        help: Aiuto
+        faq: Domande frequenti
+        contact: Scrivici
+        delete_account: Elimina account
+        legal: Note legali
+        terms: Termini di servizio
+        privacy: Privacy
+        cookie: Cookie
+        waitlist: Avvisami al lancio
+        corps: Per il tuo corpo
+    corps:
+        ps: Polizia
+        vvf: Vigili del Fuoco
+        cc: Carabinieri
+        ts: Sanità
+    slot:
+        morning: { name: Mattina, letter: M }
+        afternoon: { name: Pomeriggio, letter: P }
+        evening: { name: Sera, letter: S }
+        night: { name: Notte, letter: N }
+        rest: { name: Riposo, letter: R }
+    mockup:
+        pick: Scegli il tuo corpo
+        alt: Il calendario di Turnario con i turni del mese, i festivi e le attività del giorno
+        pattern: In quinta
+        weekdays: L,M,M,G,V,S,D
+        today: Oggi
+        overtime: Straordinario 2 h
+        bank: Banca ore +2 h
+    download:
+        title: Porta i tuoi turni sempre con te
+        body: Turnario è per iPhone, Android e per il web, con lo stesso account e gli stessi dati.
+        soon: In arrivo su App Store e Google Play
+        sign_up: Crea un account gratis
+        open_web: Apri l'app web
+        notify_me: Avvisami al lancio
+    home:
+        title: Turnario, il calendario dei tuoi turni
+        description: Turnario calcola i turni della tua turnazione e tiene il conto di ferie, permessi, straordinari e banche ore. Per Polizia di Stato, Vigili del Fuoco, Carabinieri e Sanità, su iPhone, Android e web.
+        eyebrow: Per chi lavora a turni
+        headline: I tuoi <strong>turni</strong>, le <strong>ferie</strong> e le <strong>ore</strong> in un solo calendario.
+        intro: Scegli la turnazione e Turnario disegna i turni per tutto l'anno. Segna ferie, permessi e straordinari, e sai sempre quanti giorni e quante ore ti restano.
+        price_note: Il calendario dei turni è gratis. Pro costa da %price% al mese, con %days% giorni di prova.
+        corps:
+            title: Pensato per il tuo lavoro
+            body: Le turnazioni più usate di ogni corpo sono già pronte, con i festivi e le ricorrenze. Se la tua è diversa, la crei tu.
+        values:
+            label: Perché Turnario
+            automatic:
+                title: I turni si calcolano da soli
+                body: Imposti la turnazione una volta e vedi i turni di mesi e anni, anche quando cambia.
+            everything:
+                title: Tutto in un posto
+                body: Ferie, permessi, recuperi, straordinari e note restano sul giorno in cui sono successi.
+            everywhere:
+                title: Sempre con te
+                body: Sul telefono in servizio, sul computer a casa. I dati sono gli stessi ovunque.
+        steps:
+            eyebrow: Come funziona
+            title: Tre passi e il tuo anno è in ordine
+            pattern:
+                title: Scegli la turnazione
+                body: Indica il corpo e la turnazione, oppure creane una tua. Il calendario si riempie da solo.
+            mark:
+                title: Segna cosa succede
+                body: Aggiungi ferie, permessi o straordinari su un giorno o su più giorni insieme, con i tuoi tipi e colori.
+            count:
+                title: Tieni il conto
+                body: Le banche ore e giorni si aggiornano a ogni attività. A fine mese hai il report pronto, anche in CSV.
+        features:
+            title: Tutto quello che serve, niente di più
+            more: Vedi tutte le funzioni
+        prices:
+            title: Gratis per i turni, Pro per tutto il resto
+            body: Prova Pro senza impegno e scegli il piano che preferisci.
+            more: Confronta Basic e Pro
+    features:
+        calendar:
+            title: Calendario dei turni
+            body: I turni della tua turnazione per mesi e anni, con i colori di mattina, pomeriggio, sera, notte e riposo, e i festivi in evidenza.
+            points:
+                1: Turnazioni pronte per Polizia di Stato, Vigili del Fuoco, Carabinieri e Sanità
+                2: Turnazioni personali e cambi di turnazione nel tempo
+                3: Festivi nazionali e ricorrenze sempre aggiornati
+        diary:
+            title: Ferie, permessi e straordinari
+            body: Su ogni giorno segni attività e note. Un periodo di ferie si aggiunge in un colpo solo, su più giorni.
+            points:
+                1: Attività con orari, durata e note
+                2: Inserimento su un intervallo di giorni
+                3: Il giorno mostra turno e attività insieme
+        types:
+            title: Tipi di attività tuoi
+            body: Oltre ai tipi già pronti puoi creare i tuoi, con il nome e il colore che vuoi.
+            points:
+                1: Tipi già pronti per ferie, permessi e recuperi
+                2: Colori scelti da te nel calendario
+                3: Ogni tipo può scalare o aggiungere ore e giorni alla banca
+        year_banks:
+            title: Banca ore e giorni
+            body: Turnario tiene il conto di quanto hai a disposizione e di quanto hai già usato, anno per anno.
+            points:
+                1: Dotazione annuale e ripartenza a inizio anno
+                2: Saldo aggiornato a ogni attività
+                3: Correzioni a mano quando serve
+        reports:
+            title: Report ed export CSV
+            body: Il riepilogo del mese o dell'anno con turni, attività e ore, da leggere nell'app o da scaricare.
+            points:
+                1: Totali per tipo di attività
+                2: Export CSV da aprire con un foglio di calcolo
+                3: Utile per controllare la busta paga
+        earnings:
+            title: Quanto ti spetta, in euro
+            body: Inserisci le tue tariffe e Turnario stima quanto valgono straordinari, vigilanze e le altre attività del periodo, e quanto manca ancora in busta paga.
+            points:
+                1: Tariffa oraria o a presenza per ogni tipo di attività
+                2: Totale pagato e da pagare del mese o dell'anno
+                3: Una stima da confrontare con il cedolino
+        devices:
+            title: Su telefono e sul web
+            body: Lo stesso account su iPhone, Android e browser. Quello che segni su un dispositivo lo trovi sugli altri.
+            points:
+                1: App per iPhone e Android
+                2: App web da qualsiasi computer
+                3: Accesso con email, Apple o Google
+        import:
+            title: Dalle vecchie app Turnario
+            body: Se usavi le vecchie app Turnario su iPhone porti con te i tuoi dati, e paghi Pro a prezzo ridotto.
+            points:
+                1: Import dei giorni, delle attività e dei tipi
+                2: Prezzi ridotti per chi arriva dalle vecchie app
+                3: Nessun dato perso nel passaggio
+        privacy:
+            title: I tuoi dati restano tuoi
+            body: Il servizio e i dati sono ospitati nell'Unione europea. Non vendiamo i tuoi dati e non mostriamo pubblicità.
+            points:
+                1: Copia completa dei tuoi dati quando vuoi
+                2: Cancellazione dell'account dall'app o dal sito
+                3: Comunicazioni promozionali solo con il tuo consenso
+    features_page:
+        title: Funzioni di Turnario
+        description: Calendario dei turni, ferie e permessi, tipi di attività, banca ore e giorni, report ed export CSV, stima in euro delle attività, app per iPhone, Android e web.
+        headline: Tutto il tuo servizio, <strong>giorno per giorno</strong>.
+        intro: Il calendario dei turni è gratis per sempre. Con Pro aggiungi il diario, i tuoi tipi di attività, le banche ore e giorni, i report e la stima in euro di straordinari e attività.
+        cta:
+            title: Prova Pro gratis
+            body: Pro costa da %price% al mese e puoi provarlo senza pagare nulla.
+            button: Vedi i prezzi
+    plans:
+        best: Il più conveniente
+        trial: "%days% giorni di prova gratuita"
+        monthly:
+            name: Mensile
+            per: al mese
+            note: Si rinnova ogni mese, disdici quando vuoi.
+            cta: Prova Pro mensile
+        yearly:
+            name: Annuale
+            per: all'anno
+            note: Si rinnova ogni anno, disdici quando vuoi.
+            equivalent: Pari a %price% al mese, risparmi il %saving%%
+            cta: Prova Pro annuale
+        lifetime:
+            name: Per sempre
+            per: una volta
+            note: Un solo pagamento, Pro per sempre.
+            cta: Prendi Pro per sempre
+    pricing:
+        title: Prezzi di Turnario
+        description: Il calendario dei turni è gratis. Turnario Pro costa da %price% al mese, oppure con un solo pagamento per sempre.
+        headline: Un prezzo <strong>semplice</strong>.
+        intro: Basic è gratis e resta gratis. Pro sblocca tutto, con %days% giorni di prova sui piani mensile e annuale.
+        loyal:
+            title: Arrivi dalle vecchie app Turnario?
+            body: "Importa i tuoi dati o usa il codice invito: il primo anno di Pro annuale a %first_year% (poi %yearly%), oppure Pro per sempre a %lifetime% entro %days% giorni."
+        group:
+            title: Sindacato o associazione?
+            body: "Da %members% iscritti in su, ognuno ha Pro annuale a %price% con il codice del gruppo. Scrivici dalla pagina Supporto."
+        compare:
+            title: Basic e Pro a confronto
+            body: Con Basic hai sempre i turni. Pro aggiunge tutto quello che ti serve per tenere il conto.
+            feature: Funzione
+            included: Incluso
+            excluded: Non incluso
+            calendar: Calendario dei turni
+            patterns: Turnazioni pronte e personali
+            holidays: Festivi e ricorrenze
+            devices: App per iPhone, Android e web
+            import: Import dalle vecchie app
+    support:
+        title: Supporto di Turnario
+        description: Risposte alle domande più frequenti su Turnario, gli abbonamenti, i dati e l'account.
+        headline: Come possiamo aiutarti?
+        intro: Qui trovi le risposte alle domande più frequenti. Se non trovi la tua, scrivici.
+        contact:
+            title: Non hai trovato la risposta?
+            body: Scrivici e ti rispondiamo il prima possibile.
+            delete: Vuoi eliminare il tuo account?
+    faq:
+        title: Domande frequenti
+        free:
+            q: Turnario è gratis?
+            a: Sì. Il calendario dei turni, le turnazioni, i festivi e le app su tutti i dispositivi sono gratis. Pro aggiunge il diario delle attività, i tipi personali, le banche ore e giorni, i report e la stima in euro di straordinari e attività.
+        pattern:
+            q: La mia turnazione non c'è, cosa faccio?
+            a: Puoi creare una turnazione personale con la sequenza dei tuoi turni e il giorno di partenza. Il calendario si aggiorna da solo.
+        devices:
+            q: Posso usare lo stesso account su telefono e computer?
+            a: Sì. Accedi con lo stesso account sull'app per iPhone, su quella per Android e sull'app web e trovi gli stessi dati ovunque.
+        import:
+            q: Usavo le vecchie app Turnario, perdo i miei dati?
+            a: No. La nuova app per iPhone importa i dati delle vecchie app Turnario, e chi importa paga Pro a prezzo ridotto. Chi non può importare può avere gli stessi prezzi con un codice invito.
+        trial:
+            q: Come funziona la prova gratuita?
+            a: I piani mensile e annuale partono con %days% giorni di prova. Se disdici prima della fine della prova non paghi nulla.
+        cancel:
+            q: Come disdico l'abbonamento?
+            a: Dalla pagina Abbonamento dell'app, quando vuoi. Pro resta attivo fino alla fine del periodo già pagato.
+        payment:
+            q: Come posso pagare?
+            a: Con carta, tramite Stripe, il fornitore dei pagamenti. I dati della carta li tratta Stripe, non noi.
+        loyal:
+            q: Chi ha diritto ai prezzi ridotti?
+            a: Chi importa i dati delle vecchie app Turnario o usa un codice invito. Il prezzo ridotto si vede nella pagina Abbonamento dell'app.
+        data:
+            q: Dove sono i miei dati?
+            a: Su server nell'Unione europea. Dall'app puoi scaricare una copia completa dei tuoi dati quando vuoi. Trovi tutti i dettagli nell'informativa sulla privacy.
+        delete:
+            q: Come elimino il mio account?
+            a: Dall'app, nella scheda Profilo, oppure dalla pagina Elimina account di questo sito se non hai più l'app. L'eliminazione cancella tutti i tuoi dati.
+    waitlist:
+        title: Turnario è in arrivo, iscriviti alla lista d'attesa
+        description: Lascia la tua email e ti avvisiamo appena Turnario è disponibile per Polizia di Stato, Vigili del Fuoco, Carabinieri e Sanità. Gratis e senza impegno.
+        eyebrow: In arrivo
+        headline: Il calendario dei tuoi turni <strong>sta arrivando</strong>.
+        intro: Lascia la tua email e dicci in quale corpo lavori. Ti scriviamo appena Turnario è disponibile su iPhone, Android e web.
+        points:
+            launch: Una sola email al lancio, niente pubblicità
+            corps: Partiamo dai corpi con più iscritti
+            privacy: Esci dalla lista quando vuoi, con un clic
+        corps_pages: Scopri Turnario per il tuo corpo
+        corps:
+            ps: Polizia di Stato
+            vvf: Vigili del Fuoco
+            cc: Carabinieri
+            ts: Sanità
+            other: Altro
+        price:
+            'yes': Sì
+            maybe: Forse
+            'no': No
+        form:
+            title: Avvisami al lancio
+            email: La tua email
+            corps: In quale corpo lavori?
+            other_corps: Se hai scelto "Altro", quale? (facoltativo)
+            other_corps_hint: Es. Guardia di Finanza, Polizia Locale
+            price: Pagheresti %price% all'anno per Turnario Pro? (facoltativo)
+            price_note: Il calendario dei turni resta gratis. La risposta ci aiuta a decidere il prezzo e non ti impegna.
+            consent: Acconsento a ricevere da Turnario un'email al lancio dell'app e al trattamento del mio indirizzo solo per questo scopo, come spiegato nell'<a href="%privacy%">informativa sulla privacy</a>.
+            button: Iscrivimi alla lista
+        errors:
+            title: 'Controlla questi campi:'
+            email: Scrivi un indirizzo email valido.
+            corps: Scegli il corpo in cui lavori.
+            other_corps: Il corpo può avere al massimo 80 caratteri.
+            price: Scegli una delle risposte sul prezzo, oppure nessuna.
+            consent: Per iscriverti devi dare il consenso a ricevere l'email del lancio.
+        done:
+            email:
+                title: Controlla la tua email
+                body: Ti abbiamo mandato un link per confermare l'iscrizione. Se non trovi l'email, guarda anche nella posta indesiderata.
+            listed:
+                title: Sei nella lista
+                body: Grazie! Ti scriviamo appena Turnario è disponibile.
+            share:
+                title: Fai girare la voce
+                body: Più colleghi del tuo corpo si iscrivono, prima arriviamo. Condividi questo link nel gruppo del reparto o della squadra.
+            leave: Hai cambiato idea?
+            leave_link: Esci dalla lista
+        confirm:
+            title: Confermi l'iscrizione?
+            intro: Tocca il pulsante per confermare che questo indirizzo è tuo e restare nella lista d'attesa di Turnario.
+            button: Confermo l'iscrizione
+            done:
+                title: Iscrizione confermata
+                body: Grazie, ti scriviamo appena Turnario è disponibile.
+        leave:
+            title: Vuoi uscire dalla lista?
+            intro: Toccando il pulsante cancelliamo il tuo indirizzo dalla lista d'attesa e non ti scriveremo per il lancio.
+            button: Esci dalla lista
+            done:
+                title: Sei uscito dalla lista
+                body: Abbiamo cancellato il tuo indirizzo dalla lista d'attesa. Puoi iscriverti di nuovo quando vuoi.
+        invalid:
+            title: Link non valido
+            body: Il link non è valido oppure l'indirizzo è già uscito dalla lista. Se vuoi, iscriviti di nuovo dalla pagina In arrivo.
+        too_many:
+            title: Troppe richieste
+            body: Da questa connessione sono arrivate molte iscrizioni in poco tempo. Riprova tra qualche minuto.
+    corps_page:
+        faq_title: Domande frequenti dei %corps%
+        waitlist:
+            title: Vuoi saperlo per primo?
+            body: Iscriviti alla lista d'attesa dei %corps% e ti avvisiamo appena Turnario è disponibile.
+            button: Avvisami al lancio
+        ps:
+            link: Turni Polizia di Stato
+            title: Turni Polizia di Stato, il calendario in quinta, quarta e terza | Turnario
+            description: Il calendario dei turni per la Polizia di Stato con le turnazioni in quinta, in quarta, in terza e continuative. Segna congedo, riposi, recuperi e straordinari. Su iPhone, Android e web.
+            eyebrow: Per la Polizia di Stato
+            headline: I tuoi <strong>turni in Polizia</strong>, sempre in tasca.
+            intro: Scegli la tua turnazione e Turnario disegna il servizio per tutto l'anno, con festivi, riposi e smontanti. Segna congedo, recuperi e straordinari e sai sempre quanto ti resta.
+            patterns:
+                title: Le turnazioni della Polizia, già pronte
+                body: Le turnazioni più usate negli uffici e nei reparti sono già nell'app. Se la tua è diversa la crei tu, con la sequenza e il giorno di partenza.
+                items:
+                    1: In quinta, sera, pomeriggio, mattina, notte e riposo
+                    2: In quarta e in terza
+                    3: Continuativi mattina e pomeriggio, settimanale e alternati
+                    4: Cambi di turnazione nel tempo, senza perdere lo storico
+            needs:
+                title: Tieni il conto del servizio
+                body: Ogni giorno mostra il turno e quello che è successo. Le banche ore e giorni si aggiornano da sole.
+                items:
+                    1: Congedo ordinario, riposi e recuperi
+                    2: Straordinari con orari e durata
+                    3: Banca ore e giorni, anno per anno
+                    4: Report del mese in CSV, utile per controllare il cedolino
+            faq:
+                1:
+                    q: C'è la turnazione in quinta della Polizia?
+                    a: Sì. La quinta (sera, pomeriggio, mattina, notte, riposo) è già pronta, insieme alla quarta, alla terza e ai continuativi. Scegli il giorno di partenza e il calendario si riempie da solo.
+                2:
+                    q: Posso segnare straordinari e recuperi?
+                    a: Sì. Su ogni giorno aggiungi straordinari, recuperi, congedo e permessi con orari e note. Con Pro le banche ore e giorni si aggiornano a ogni attività.
+                3:
+                    q: Quanto costa Turnario?
+                    a: Il calendario dei turni è gratis. Pro costa da %price% al mese, con %days% giorni di prova.
+        vvf:
+            link: Turni Vigili del Fuoco
+            title: Turni Vigili del Fuoco, il calendario per sezioni A, B, C e D | Turnario
+            description: Il calendario dei turni per i Vigili del Fuoco con giorno, notte, smontante e riposo, le sezioni A, B, C e D e il turno di 24 ore. Segna straordinari e boschiva. Su iPhone, Android e web.
+            eyebrow: Per i Vigili del Fuoco
+            headline: I tuoi <strong>turni da pompiere</strong>, sezione per sezione.
+            intro: Scegli la tua sezione e Turnario calcola giorno, notte, smontante e riposo per tutto l'anno. Segna straordinari, boschiva e ferie e tieni il conto delle ore.
+            patterns:
+                title: Il turno dei Vigili del Fuoco, già pronto
+                body: Il ciclo nazionale e le viste per sezione sono già nell'app, con la data di partenza giusta. Se il tuo comando fa diversamente crei la tua turnazione.
+                items:
+                    1: Giorno, notte, smontante e riposo
+                    2: Sezioni A, B, C e D, anche a coppie
+                    3: Turno di 24 ore
+                    4: Turni M3 sui giorni della settimana
+            needs:
+                title: Tieni il conto delle ore
+                body: Ogni giorno mostra il turno della tua sezione e quello che hai fatto. Le banche ore si aggiornano da sole.
+                items:
+                    1: Straordinari e richiami in servizio
+                    2: Boschiva e attività con orari e note
+                    3: Ferie e recuperi, con il saldo dell'anno
+                    4: Report del mese in CSV
+            faq:
+                1:
+                    q: C'è il turno della mia sezione?
+                    a: Sì. Le sezioni A, B, C e D sono già pronte, da sole o a coppie, insieme al ciclo giorno, notte, smontante e riposo e al turno di 24 ore.
+                2:
+                    q: Posso segnare straordinari e boschiva?
+                    a: Sì. Su ogni giorno aggiungi straordinari, boschiva, ferie e recuperi con orari e note. Con Pro la banca ore si aggiorna a ogni attività.
+                3:
+                    q: Quanto costa Turnario?
+                    a: Il calendario dei turni è gratis. Pro costa da %price% al mese, con %days% giorni di prova.
+        cc:
+            link: Turni Carabinieri
+            title: Turni Carabinieri, il calendario in quinta pari e dispari | Turnario
+            description: Il calendario dei turni per l'Arma dei Carabinieri con la quinta pari e dispari, la quarta e la terza. Segna licenze, riposi, recuperi e straordinari. Su iPhone, Android e web.
+            eyebrow: Per i Carabinieri
+            headline: I tuoi <strong>turni nell'Arma</strong>, giorno per giorno.
+            intro: Scegli la tua turnazione e Turnario disegna il servizio per tutto l'anno, con festivi e riposi. Segna licenze, recuperi e straordinari e sai sempre quanto ti resta.
+            patterns:
+                title: Le turnazioni dell'Arma, già pronte
+                body: Le turnazioni più usate nelle stazioni e nei reparti sono già nell'app. Se la tua è diversa la crei tu, con la sequenza e il giorno di partenza.
+                items:
+                    1: In quinta, sui giorni pari o dispari
+                    2: In quarta e in terza
+                    3: Continuativo sera, pomeriggio e mattina
+                    4: Cambi di turnazione nel tempo, senza perdere lo storico
+            needs:
+                title: Tieni il conto del servizio
+                body: Ogni giorno mostra il turno e quello che è successo. Le banche ore e giorni si aggiornano da sole.
+                items:
+                    1: Licenze, riposi e recuperi
+                    2: Straordinari con orari e durata
+                    3: Banca ore e giorni, anno per anno
+                    4: Report del mese in CSV, utile per controllare il cedolino
+            faq:
+                1:
+                    q: C'è la quinta pari e dispari?
+                    a: Sì. La quinta è pronta sia sui giorni pari sia sui dispari, insieme alla quarta, alla terza e al continuativo. Scegli il giorno di partenza e il calendario si riempie da solo.
+                2:
+                    q: Posso segnare licenze e straordinari?
+                    a: Sì. Su ogni giorno aggiungi licenze, recuperi, straordinari e permessi con orari e note. Con Pro le banche ore e giorni si aggiornano a ogni attività.
+                3:
+                    q: Quanto costa Turnario?
+                    a: Il calendario dei turni è gratis. Pro costa da %price% al mese, con %days% giorni di prova.
+        ts:
+            link: Turni infermieri e Sanità
+            title: Turni infermieri e OSS, il calendario dei turni in ospedale | Turnario
+            description: Il calendario dei turni per infermieri, OSS e personale sanitario con la turnazione in quinta, mattina, pomeriggio, notte e smonto. Segna ferie, notti e straordinari. Su iPhone, Android e web.
+            eyebrow: Per infermieri e personale sanitario
+            headline: I tuoi <strong>turni in reparto</strong>, sempre sotto controllo.
+            intro: Scegli la tua turnazione e Turnario calcola mattine, pomeriggi e notti per tutto l'anno, con i festivi. Segna ferie, cambi turno e straordinari e tieni il conto delle ore.
+            patterns:
+                title: Le turnazioni della Sanità, già pronte
+                body: Le turnazioni più usate in ospedale sono già nell'app. Se il tuo reparto ne usa un'altra la crei tu, con la sequenza e il giorno di partenza.
+                items:
+                    1: In quinta, mattina, pomeriggio, notte, smonto e riposo
+                    2: Con il pomeriggio prima della mattina
+                    3: Turnazioni personali per ogni reparto
+                    4: Cambi di turnazione nel tempo, senza perdere lo storico
+            needs:
+                title: Tieni il conto delle ore
+                body: Ogni giorno mostra il turno e quello che è successo. Le banche ore e giorni si aggiornano da sole.
+                items:
+                    1: Ferie, permessi e recuperi
+                    2: Straordinari e rientri con orari e durata
+                    3: Banca ore e giorni, anno per anno
+                    4: Report del mese in CSV, utile per controllare il cedolino
+            faq:
+                1:
+                    q: C'è la turnazione in quinta degli infermieri?
+                    a: Sì. La quinta (mattina, pomeriggio, notte, smonto, riposo) è già pronta, anche nella versione con il pomeriggio prima. Se il tuo reparto ne usa un'altra la crei in pochi passi.
+                2:
+                    q: Va bene anche per OSS, ostetriche e tecnici?
+                    a: Sì. Turnario serve a chiunque lavori a turni in Sanità. Scegli la turnazione, segna ferie, cambi e straordinari e tieni il conto delle ore.
+                3:
+                    q: Quanto costa Turnario?
+                    a: Il calendario dei turni è gratis. Pro costa da %price% al mese, con %days% giorni di prova.
+
+consent:
+    title: Cookie e servizi esterni
+    intro: Usiamo solo ciò che serve al funzionamento del sito. Con il tuo permesso carichiamo anche servizi di altri, che possono usare cookie propri.
+    policy: Informativa cookie
+    reject: Rifiuta
+    accept: Accetta
+    customize: Personalizza
+    save: Salva scelte
+    preferences: Preferenze cookie
+    technical:
+        label: Tecnici
+        description: Necessari al funzionamento. Sempre attivi.

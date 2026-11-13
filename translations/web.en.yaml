@@ -1,0 +1,552 @@
+verify_email:
+    title: Confirm your email address
+    intro: Tap the button to confirm this address is yours.
+    button: Confirm my address
+    done:
+        title: Address confirmed
+        body: Thank you, your email address is confirmed. You can go back to the app.
+    invalid:
+        title: Invalid link
+        body: The link is not valid, was already used or has expired. Ask for a new confirmation email in the app.
+
+reset_password:
+    title: Choose a new password
+    intro: The password needs at least %min% characters. After the change you will have to sign in again on every device.
+    password: New password
+    confirmation: Repeat the new password
+    button: Save the password
+    mismatch: The two passwords are not the same.
+    length: The password needs %min% to %max% characters.
+    done:
+        title: Password changed
+        body: The new password is saved. Go back to the app and sign in with it.
+    invalid:
+        title: Invalid link
+        body: The link is not valid, was already used or has expired. Ask for a new email with "Forgot password" on the sign-in screen of the app.
+
+delete_account:
+    title: Delete your Turnario account
+    intro: You can delete your Turnario account and all the data linked to it at any time, for free and without reinstalling the app.
+    in_app:
+        title: From the app
+        body: Open Turnario on your phone or on the web, go to the Profile tab and tap "Delete account". The deletion is immediate.
+    on_web:
+        title: From this page
+        body: If you no longer have the app, enter the email address of your account. We send you a link to confirm the deletion, so nobody else can delete your account.
+    deleted:
+        title: What is deleted
+        body: At once and for good your profile, photo, days with notes and activities, personal types, shift patterns, hour and day banks, devices and notifications, linked Apple and Google accounts and open sessions. We also remove your address from the promotional mailing list.
+    kept:
+        title: What is kept
+        body: Only the data the law requires us to keep, that is the tax records of purchases paid on the web, kept by Stripe, our payment provider, for as long as the law requires. Subscriptions bought on the App Store or Google Play are not cancelled by this, so cancel them from your Apple or Google account settings.
+    email: Email of your account
+    button: Send me the confirmation link
+    invalid_email: Enter a valid email address.
+    sent:
+        title: Check your email
+        body: If a Turnario account exists with this address, we sent it a link to confirm the deletion. The link works for %minutes% minutes. If you cannot find the email, check your spam folder too.
+    contact: For any problem write to %email%.
+
+confirm_deletion:
+    title: Do you confirm the deletion?
+    intro: When you tap the button your Turnario account and all your data will be deleted for good. This cannot be undone.
+    button: Delete for good
+    done:
+        title: Account deleted
+        body: We deleted your Turnario account and all the data linked to it. We sent you a confirmation email.
+    invalid:
+        title: Invalid link
+        body: The link is not valid, was already used or has expired. Ask for a new link from the account deletion page.
+
+billing:
+    success:
+        title: Payment received
+        body: 'Thank you! Go back to the app: Premium starts as soon as Stripe confirms the payment, usually within seconds.'
+    cancel:
+        title: Purchase canceled
+        body: 'Nothing was charged. You can go back to the app and try again whenever you like.'
+    return:
+        title: Done
+        body: 'Go back to the app. Changes to your subscription show up in the app within seconds.'
+
+open_app:
+    title: Open Turnario
+    body: This link opens in the Turnario app. If the app is installed, open it from this phone; otherwise install it and then tap the link again.
+    invite: 'Your invite code, to enter in the app after installing it:'
+    install: Install the app
+    ios: Download for iPhone
+    android: Download for Android
+
+badges:
+    ios_alt: Download on the App Store
+    android_alt: Get it on Google Play
+    apple: 'Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.'
+    google: 'Google Play and the Google Play logo are trademarks of Google LLC.'
+
+site:
+    nav:
+        label: Main menu
+        menu: Open the menu
+        skip: Skip to content
+        features: Features
+        pricing: Pricing
+        support: Support
+        sign_in: Sign in
+        download: Download
+    footer:
+        tagline: The shift calendar for people who work in the Police, Fire Brigade, Carabinieri and Healthcare.
+        product: Product
+        web_app: Web app
+        download: Download the app
+        help: Help
+        faq: Frequently asked questions
+        contact: Contact us
+        delete_account: Delete account
+        legal: Legal
+        terms: Terms of service
+        privacy: Privacy
+        cookie: Cookies
+        waitlist: Tell me at launch
+        corps: For your corps
+    corps:
+        ps: Police
+        vvf: Fire Brigade
+        cc: Carabinieri
+        ts: Healthcare
+    slot:
+        morning: { name: Morning, letter: M }
+        afternoon: { name: Afternoon, letter: A }
+        evening: { name: Evening, letter: E }
+        night: { name: Night, letter: N }
+        rest: { name: Rest, letter: R }
+    mockup:
+        pick: Pick your corps
+        alt: The Turnario calendar with the shifts of the month, the holidays and the activities of the day
+        pattern: Five-day cycle
+        weekdays: M,T,W,T,F,S,S
+        today: Today
+        overtime: Overtime 2 h
+        bank: Hour bank +2 h
+    download:
+        title: Take your shifts with you
+        body: Turnario is on iPhone, Android and the web, with the same account and the same data.
+        soon: Coming soon to the App Store and Google Play
+        sign_up: Create a free account
+        open_web: Open the web app
+        notify_me: Tell me at launch
+    home:
+        title: Turnario, your shift calendar
+        description: Turnario works out the shifts of your rota and keeps count of leave, permits, overtime and hour banks. For the Police, Fire Brigade, Carabinieri and Healthcare, on iPhone, Android and the web.
+        eyebrow: For shift workers
+        headline: Your <strong>shifts</strong>, <strong>leave</strong> and <strong>hours</strong> in one calendar.
+        intro: Pick your rota and Turnario draws your shifts for the whole year. Mark leave, permits and overtime, and always know how many days and hours you have left.
+        price_note: The shift calendar is free. Pro starts at %price% a month, with a %days%-day trial.
+        corps:
+            title: Made for your job
+            body: The most common rotas of every corps are ready, with public holidays. If yours is different, you create it.
+        values:
+            label: Why Turnario
+            automatic:
+                title: Shifts work themselves out
+                body: Set your rota once and see your shifts for months and years, even when it changes.
+            everything:
+                title: All in one place
+                body: Leave, permits, time off in lieu, overtime and notes stay on the day they happened.
+            everywhere:
+                title: Always with you
+                body: On your phone on duty, on your computer at home. The data is the same everywhere.
+        steps:
+            eyebrow: How it works
+            title: Three steps and your year is in order
+            pattern:
+                title: Pick your rota
+                body: Choose your corps and rota, or create your own. The calendar fills itself in.
+            mark:
+                title: Mark what happens
+                body: Add leave, permits or overtime on one day or several at once, with your own types and colours.
+            count:
+                title: Keep count
+                body: Hour and day banks update with every activity. At the end of the month your report is ready, in CSV too.
+        features:
+            title: Everything you need, nothing more
+            more: See all features
+        prices:
+            title: Free for shifts, Pro for everything else
+            body: Try Pro with no commitment and pick the plan you prefer.
+            more: Compare Basic and Pro
+    features:
+        calendar:
+            title: Shift calendar
+            body: The shifts of your rota for months and years, coloured by morning, afternoon, evening, night and rest, with public holidays highlighted.
+            points:
+                1: Ready-made rotas for the Police, Fire Brigade, Carabinieri and Healthcare
+                2: Personal rotas and rota changes over time
+                3: National public holidays always up to date
+        diary:
+            title: Leave, permits and overtime
+            body: Mark activities and notes on every day. A stretch of leave goes in at once, over several days.
+            points:
+                1: Activities with times, duration and notes
+                2: Entry over a range of days
+                3: Each day shows shift and activities together
+        types:
+            title: Your own activity types
+            body: Besides the ready-made types you can create your own, with the name and colour you like.
+            points:
+                1: Ready-made types for leave, permits and time off
+                2: Colours of your choice in the calendar
+                3: Each type can take or add hours and days to the bank
+        year_banks:
+            title: Hour and day banks
+            body: Turnario keeps count of what you have and what you have already used, year by year.
+            points:
+                1: Yearly allowance and carry-over at the start of the year
+                2: Balance updated with every activity
+                3: Manual corrections when needed
+        reports:
+            title: Reports and CSV export
+            body: A summary of the month or the year with shifts, activities and hours, to read in the app or download.
+            points:
+                1: Totals by activity type
+                2: CSV export to open in a spreadsheet
+                3: Handy to check your payslip
+        earnings:
+            title: What you are owed, in euros
+            body: Enter your own rates and Turnario estimates what overtime, extra duties and the other activities of the period are worth, and how much your payslip still owes you.
+            points:
+                1: Hourly or per-entry rate for each activity type
+                2: Paid and unpaid totals for the month or the year
+                3: An estimate to check against your payslip
+        devices:
+            title: On your phone and the web
+            body: The same account on iPhone, Android and the browser. What you mark on one device you find on the others.
+            points:
+                1: Apps for iPhone and Android
+                2: Web app from any computer
+                3: Sign in with email, Apple or Google
+        import:
+            title: From the old Turnario apps
+            body: If you used the old Turnario apps on iPhone you bring your data with you, and pay a reduced price for Pro.
+            points:
+                1: Import of days, activities and types
+                2: Reduced prices for those coming from the old apps
+                3: No data lost in the move
+        privacy:
+            title: Your data stays yours
+            body: The service and the data are hosted in the European Union. We do not sell your data and show no ads.
+            points:
+                1: A full copy of your data whenever you want
+                2: Account deletion from the app or the website
+                3: Marketing emails only with your consent
+    features_page:
+        title: Turnario features
+        description: Shift calendar, leave and permits, activity types, hour and day banks, reports and CSV export, estimate in euros of your activities, apps for iPhone, Android and the web.
+        headline: Your whole service, <strong>day by day</strong>.
+        intro: The shift calendar is free forever. Pro adds the diary, your own activity types, hour and day banks, reports and an estimate in euros of overtime and activities.
+        cta:
+            title: Try Pro for free
+            body: Pro starts at %price% a month and you can try it without paying anything.
+            button: See pricing
+    plans:
+        best: Best value
+        trial: "%days%-day free trial"
+        monthly:
+            name: Monthly
+            per: a month
+            note: Renews every month, cancel any time.
+            cta: Try Pro monthly
+        yearly:
+            name: Yearly
+            per: a year
+            note: Renews every year, cancel any time.
+            equivalent: Just %price% a month, save %saving%%
+            cta: Try Pro yearly
+        lifetime:
+            name: Lifetime
+            per: once
+            note: One payment, Pro forever.
+            cta: Get Pro for life
+    pricing:
+        title: Turnario pricing
+        description: The shift calendar is free. Turnario Pro starts at %price% a month, or one payment for life.
+        headline: <strong>Simple</strong> pricing.
+        intro: Basic is free and stays free. Pro unlocks everything, with a %days%-day trial on the monthly and yearly plans.
+        loyal:
+            title: Coming from the old Turnario apps?
+            body: "Import your data or use an invite code: the first year of yearly Pro at %first_year% (then %yearly%), or Pro forever at %lifetime% within %days% days."
+        group:
+            title: A union or an association?
+            body: "From %members% members up, each one gets yearly Pro at %price% with the code of the group. Write to us from the Support page."
+        compare:
+            title: Basic and Pro compared
+            body: With Basic you always have your shifts. Pro adds everything you need to keep count.
+            feature: Feature
+            included: Included
+            excluded: Not included
+            calendar: Shift calendar
+            patterns: Ready-made and personal rotas
+            holidays: Public holidays
+            devices: Apps for iPhone, Android and the web
+            import: Import from the old apps
+    support:
+        title: Turnario support
+        description: Answers to the most frequent questions about Turnario, subscriptions, data and your account.
+        headline: How can we help?
+        intro: Here are the answers to the most frequent questions. If yours is not here, write to us.
+        contact:
+            title: Didn't find the answer?
+            body: Write to us and we will get back to you as soon as we can.
+            delete: Want to delete your account?
+    faq:
+        title: Frequently asked questions
+        free:
+            q: Is Turnario free?
+            a: Yes. The shift calendar, the rotas, public holidays and the apps on every device are free. Pro adds the activity diary, personal types, hour and day banks, reports and an estimate in euros of overtime and activities.
+        pattern:
+            q: My rota is not there, what do I do?
+            a: You can create a personal rota with the sequence of your shifts and its start day. The calendar updates by itself.
+        devices:
+            q: Can I use the same account on my phone and computer?
+            a: Yes. Sign in with the same account on the iPhone app, the Android app and the web app and you find the same data everywhere.
+        import:
+            q: I used the old Turnario apps, do I lose my data?
+            a: No. The new iPhone app imports the data of the old Turnario apps, and those who import pay a reduced price for Pro. Those who cannot import can get the same prices with an invite code.
+        trial:
+            q: How does the free trial work?
+            a: The monthly and yearly plans start with a %days%-day trial. If you cancel before it ends you pay nothing.
+        cancel:
+            q: How do I cancel my subscription?
+            a: From the Subscription page of the app, whenever you want. Pro stays active until the end of the period already paid.
+        payment:
+            q: How can I pay?
+            a: By card, through Stripe, our payment provider. Your card details are handled by Stripe, not by us.
+        loyal:
+            q: Who gets the reduced prices?
+            a: Those who import the data of the old Turnario apps or use an invite code. The reduced price shows on the Subscription page of the app.
+        data:
+            q: Where is my data?
+            a: On servers in the European Union. From the app you can download a full copy of your data whenever you want. All the details are in the privacy policy.
+        delete:
+            q: How do I delete my account?
+            a: From the app, in the Profile tab, or from the Delete account page of this website if you no longer have the app. Deletion removes all your data.
+    waitlist:
+        title: Turnario is coming, join the waiting list
+        description: Leave your email and we will tell you as soon as Turnario is available for the State Police, Fire Brigade, Carabinieri and Healthcare. Free, no strings attached.
+        eyebrow: Coming soon
+        headline: The calendar of your shifts <strong>is coming</strong>.
+        intro: Leave your email and tell us which corps you work in. We will write to you as soon as Turnario is available on iPhone, Android and the web.
+        points:
+            launch: One email at launch, no advertising
+            corps: We start with the corps with the most sign-ups
+            privacy: Leave the list whenever you want, in one click
+        corps_pages: Turnario for your corps
+        corps:
+            ps: State Police
+            vvf: Fire Brigade
+            cc: Carabinieri
+            ts: Healthcare
+            other: Other
+        price:
+            'yes': 'Yes'
+            maybe: Maybe
+            'no': 'No'
+        form:
+            title: Tell me at launch
+            email: Your email
+            corps: Which corps do you work in?
+            other_corps: If you picked "Other", which one? (optional)
+            other_corps_hint: E.g. Financial Police, Local Police
+            price: Would you pay %price% a year for Turnario Pro? (optional)
+            price_note: The shift calendar stays free. Your answer helps us set the price and does not commit you.
+            consent: I agree to receive one email from Turnario when the app launches and to the processing of my address for this purpose only, as explained in the <a href="%privacy%">privacy notice</a>.
+            button: Put me on the list
+        errors:
+            title: 'Please check these fields:'
+            email: Enter a valid email address.
+            corps: Pick the corps you work in.
+            other_corps: The corps can be at most 80 characters long.
+            price: Pick one of the price answers, or none.
+            consent: To sign up you need to agree to receive the launch email.
+        done:
+            email:
+                title: Check your email
+                body: We sent you a link to confirm your sign-up. If you cannot find the email, look in the spam folder too.
+            listed:
+                title: You are on the list
+                body: Thank you! We will write to you as soon as Turnario is available.
+            share:
+                title: Spread the word
+                body: The more colleagues from your corps sign up, the sooner we get there. Share this link in your team's group.
+            leave: Changed your mind?
+            leave_link: Leave the list
+        confirm:
+            title: Confirm your sign-up?
+            intro: Tap the button to confirm this address is yours and stay on the Turnario waiting list.
+            button: I confirm
+            done:
+                title: Sign-up confirmed
+                body: Thank you, we will write to you as soon as Turnario is available.
+        leave:
+            title: Leave the list?
+            intro: Tapping the button deletes your address from the waiting list and we will not write to you at launch.
+            button: Leave the list
+            done:
+                title: You left the list
+                body: We deleted your address from the waiting list. You can sign up again whenever you want.
+        invalid:
+            title: Invalid link
+            body: The link is not valid or the address already left the list. If you want, sign up again from the Coming soon page.
+        too_many:
+            title: Too many requests
+            body: Many sign-ups came from this connection in a short time. Try again in a few minutes.
+    corps_page:
+        faq_title: Frequent questions from the %corps%
+        waitlist:
+            title: Want to know first?
+            body: Join the waiting list for the %corps% and we will tell you as soon as Turnario is available.
+            button: Tell me at launch
+        ps:
+            link: State Police shifts
+            title: State Police shifts, the calendar for five, four and three-day cycles | Turnario
+            description: The shift calendar for the Italian State Police with five, four and three-day cycles and continuous patterns. Track leave, rest days, time off in lieu and overtime. On iPhone, Android and the web.
+            eyebrow: For the State Police
+            headline: Your <strong>police shifts</strong>, always in your pocket.
+            intro: Pick your pattern and Turnario draws your duty for the whole year, with holidays, rest days and post-night days. Track leave, time off in lieu and overtime and always know what you have left.
+            patterns:
+                title: Police shift patterns, ready to use
+                body: The patterns most used in offices and units are already in the app. If yours is different you create it, with its sequence and start day.
+                items:
+                    1: Five-day cycle, evening, afternoon, morning, night and rest
+                    2: Four and three-day cycles
+                    3: Continuous morning and afternoon, weekly and alternating
+                    4: Pattern changes over time, history kept
+            needs:
+                title: Keep count of your duty
+                body: Each day shows the shift and what happened. Hour and day banks update on their own.
+                items:
+                    1: Annual leave, rest days and time off in lieu
+                    2: Overtime with times and duration
+                    3: Hour and day banks, year by year
+                    4: Monthly CSV report, handy to check your payslip
+            faq:
+                1:
+                    q: Is the police five-day cycle there?
+                    a: Yes. The five-day cycle (evening, afternoon, morning, night, rest) is ready, along with the four and three-day cycles and the continuous ones. Pick the start day and the calendar fills itself.
+                2:
+                    q: Can I track overtime and time off in lieu?
+                    a: Yes. On each day add overtime, time off in lieu, leave and permits with times and notes. With Pro the hour and day banks update with every activity.
+                3:
+                    q: How much does Turnario cost?
+                    a: The shift calendar is free. Pro costs from %price% a month, with a %days%-day trial.
+        vvf:
+            link: Fire Brigade shifts
+            title: Fire Brigade shifts, the calendar for sections A, B, C and D | Turnario
+            description: The shift calendar for the Italian Fire Brigade with day, night, post-night and rest, sections A, B, C and D and the 24-hour shift. Track overtime and wildfire duty. On iPhone, Android and the web.
+            eyebrow: For the Fire Brigade
+            headline: Your <strong>firefighter shifts</strong>, section by section.
+            intro: Pick your section and Turnario works out day, night, post-night and rest for the whole year. Track overtime, wildfire duty and leave and keep count of your hours.
+            patterns:
+                title: The Fire Brigade shift, ready to use
+                body: The national cycle and the section views are already in the app, with the right start date. If your command does it differently you create your own pattern.
+                items:
+                    1: Day, night, post-night and rest
+                    2: Sections A, B, C and D, also in pairs
+                    3: 24-hour shift
+                    4: M3 shifts on weekdays
+            needs:
+                title: Keep count of your hours
+                body: Each day shows the shift of your section and what you did. Hour banks update on their own.
+                items:
+                    1: Overtime and call-backs
+                    2: Wildfire duty and activities with times and notes
+                    3: Leave and time off in lieu, with the year balance
+                    4: Monthly CSV report
+            faq:
+                1:
+                    q: Is my section's shift there?
+                    a: Yes. Sections A, B, C and D are ready, alone or in pairs, along with the day, night, post-night and rest cycle and the 24-hour shift.
+                2:
+                    q: Can I track overtime and wildfire duty?
+                    a: Yes. On each day add overtime, wildfire duty, leave and time off in lieu with times and notes. With Pro the hour bank updates with every activity.
+                3:
+                    q: How much does Turnario cost?
+                    a: The shift calendar is free. Pro costs from %price% a month, with a %days%-day trial.
+        cc:
+            link: Carabinieri shifts
+            title: Carabinieri shifts, the calendar for even and odd five-day cycles | Turnario
+            description: The shift calendar for the Carabinieri with even and odd five-day cycles, four and three-day cycles. Track leave, rest days, time off in lieu and overtime. On iPhone, Android and the web.
+            eyebrow: For the Carabinieri
+            headline: Your <strong>Carabinieri shifts</strong>, day by day.
+            intro: Pick your pattern and Turnario draws your duty for the whole year, with holidays and rest days. Track leave, time off in lieu and overtime and always know what you have left.
+            patterns:
+                title: Carabinieri shift patterns, ready to use
+                body: The patterns most used in stations and units are already in the app. If yours is different you create it, with its sequence and start day.
+                items:
+                    1: Five-day cycle, on even or odd days
+                    2: Four and three-day cycles
+                    3: Continuous evening, afternoon and morning
+                    4: Pattern changes over time, history kept
+            needs:
+                title: Keep count of your duty
+                body: Each day shows the shift and what happened. Hour and day banks update on their own.
+                items:
+                    1: Leave, rest days and time off in lieu
+                    2: Overtime with times and duration
+                    3: Hour and day banks, year by year
+                    4: Monthly CSV report, handy to check your payslip
+            faq:
+                1:
+                    q: Are the even and odd five-day cycles there?
+                    a: Yes. The five-day cycle is ready on both even and odd days, along with the four and three-day cycles and the continuous one. Pick the start day and the calendar fills itself.
+                2:
+                    q: Can I track leave and overtime?
+                    a: Yes. On each day add leave, time off in lieu, overtime and permits with times and notes. With Pro the hour and day banks update with every activity.
+                3:
+                    q: How much does Turnario cost?
+                    a: The shift calendar is free. Pro costs from %price% a month, with a %days%-day trial.
+        ts:
+            link: Nurse and healthcare shifts
+            title: Nurse and care worker shifts, the hospital shift calendar | Turnario
+            description: The shift calendar for nurses, care workers and healthcare staff with the five-day cycle, morning, afternoon, night and post-night. Track leave, nights and overtime. On iPhone, Android and the web.
+            eyebrow: For nurses and healthcare staff
+            headline: Your <strong>ward shifts</strong>, always under control.
+            intro: Pick your pattern and Turnario works out mornings, afternoons and nights for the whole year, with holidays. Track leave, shift swaps and overtime and keep count of your hours.
+            patterns:
+                title: Healthcare shift patterns, ready to use
+                body: The patterns most used in hospitals are already in the app. If your ward uses another one you create it, with its sequence and start day.
+                items:
+                    1: Five-day cycle, morning, afternoon, night, post-night and rest
+                    2: With the afternoon before the morning
+                    3: Personal patterns for every ward
+                    4: Pattern changes over time, history kept
+            needs:
+                title: Keep count of your hours
+                body: Each day shows the shift and what happened. Hour and day banks update on their own.
+                items:
+                    1: Leave, permits and time off in lieu
+                    2: Overtime and call-ins with times and duration
+                    3: Hour and day banks, year by year
+                    4: Monthly CSV report, handy to check your payslip
+            faq:
+                1:
+                    q: Is the nurses' five-day cycle there?
+                    a: Yes. The five-day cycle (morning, afternoon, night, post-night, rest) is ready, also in the version with the afternoon first. If your ward uses another one you create it in a few steps.
+                2:
+                    q: Does it work for care workers, midwives and technicians too?
+                    a: Yes. Turnario is for anyone working shifts in healthcare. Pick the pattern, track leave, swaps and overtime and keep count of your hours.
+                3:
+                    q: How much does Turnario cost?
+                    a: The shift calendar is free. Pro costs from %price% a month, with a %days%-day trial.
+
+consent:
+    title: Cookies and external services
+    intro: We only use what the site needs to work. With your permission we also load services from others, which may use their own cookies.
+    policy: Cookie policy
+    reject: Reject
+    accept: Accept
+    customize: Customise
+    save: Save choices
+    preferences: Cookie preferences
+    technical:
+        label: Technical
+        description: Needed for the site to work. Always on.

@@ -1,0 +1,49 @@
+{# The calendar of the app drawn in HTML: this month, the "in quinta" cycle (S P M N R), Sundays as holidays and a few days with activities. The chips above change the tint of the corps, as the apps do; `selectedCorps` (an AppEnum value) picks the first one. #}
+{% set now = date() %}
+{% set first = date('first day of this month') %}
+{% set offset = (first|date('N')) - 1 %}
+{% set days = first|date('t') %}
+{% set today = now|date('j') %}
+{% set cycle = ['evening', 'afternoon', 'morning', 'night', 'rest'] %}
+{% set activities = [3, 9, 16, 24] %}
+{% set corps = ['ps', 'vvf', 'cc', 'ts'] %}
+<div class="demo">
+    <fieldset>
+        <legend>{{ 'site.mockup.pick'|trans({}, 'web', locale) }}</legend>
+        {% for code in corps %}
+            <input type="radio" name="corps" id="corps-{{ code }}" value="{{ code }}"{% if code == (selectedCorps|default('PS'))|lower %} checked{% endif %}>
+            <label class="chip" for="corps-{{ code }}">{{ ('site.corps.' ~ code)|trans({}, 'web', locale) }}</label>
+        {% endfor %}
+    </fieldset>
+    <div class="phone" role="img" aria-label="{{ 'site.mockup.alt'|trans({}, 'web', locale) }}">
+        <div class="phone__screen">
+            <div class="phone__top">
+                <span class="phone__title">{{ month_title(now, locale) }}</span>
+                <span class="phone__corps">{{ 'site.mockup.pattern'|trans({}, 'web', locale) }}</span>
+            </div>
+            <ul class="month" aria-hidden="true">
+                {% for weekday in ('site.mockup.weekdays'|trans({}, 'web', locale))|split(',') %}<li class="month__dow">{{ weekday }}</li>{% endfor %}
+                {% for blank in range(1, offset) %}{% if offset > 0 %}<li class="month__day month__day--blank"></li>{% endif %}{% endfor %}
+                {% for day in 1..days %}
+                    {% set slot = cycle[(day - 1) % 5] %}
+                    {% set sunday = ((offset + day - 1) % 7) == 6 %}
+                    <li class="month__day{% if day == today %} month__day--today{% elseif sunday %} month__day--holiday{% endif %}" data-slot="{{ slot }}">
+                        <span>{{ day }}</span>
+                        <b>{{ ('site.slot.' ~ slot ~ '.letter')|trans({}, 'web', locale) }}</b>
+                        {% if day in activities %}<i></i>{% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            {% set todaySlot = cycle[(today - 1) % 5] %}
+            <div class="phone__day">
+                <strong>{{ 'site.mockup.today'|trans({}, 'web', locale) }}</strong>
+                <span class="pill" data-slot="{{ todaySlot }}">{{ ('site.slot.' ~ todaySlot ~ '.name')|trans({}, 'web', locale) }}</span>
+                <span class="pill">{{ 'site.mockup.overtime'|trans({}, 'web', locale) }}</span>
+                <span class="pill">{{ 'site.mockup.bank'|trans({}, 'web', locale) }}</span>
+            </div>
+            <ul class="legend" aria-hidden="true">
+                {% for slot in cycle %}<li data-slot="{{ slot }}">{{ ('site.slot.' ~ slot ~ '.name')|trans({}, 'web', locale) }}</li>{% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+{
+  "monthlyAmount": 149,
+  "plans": [
+    {
+      "code": "monthly",
+      "amount": 149,
+      "standardAmount": 149,
+      "renewalAmount": 149,
+      "trialDays": 7
+    },
+    {
+      "code": "yearly",
+      "amount": 1499,
+      "standardAmount": 1499,
+      "renewalAmount": 1499,
+      "trialDays": 7
+    },
+    {
+      "code": "lifetime",
+      "amount": 3499,
+      "standardAmount": 3499,
+      "renewalAmount": null,
+      "trialDays": 0
+    }
+  ],
+  "offers": {
+    "firstYear": {
+      "amount": 999,
+      "renewalAmount": 1499
+    },
+    "lifetime": {
+      "amount": 2499,
+      "renewalAmount": null
+    },
+    "group": {
+      "amount": 999,
+      "renewalAmount": 999
+    }
+  },
+  "features": [
+    "diary",
+    "types",
+    "year_banks",
+    "reports"
+  ],
+  "corps": [
+    {
+      "value": "polizia",
+      "translationPrefix": "site.corps_page.ps",
+      "tint": "#1565c0",
+      "darkTint": "#64b5f6",
+      "app": {
+        "value": "PS"
+      }
+    },
+    {
+      "value": "vigili-del-fuoco",
+      "translationPrefix": "site.corps_page.vvf",
+      "tint": "#c62828",
+      "darkTint": "#ef5350",
+      "app": {
+        "value": "VVF"
+      }
+    },
+    {
+      "value": "carabinieri",
+      "translationPrefix": "site.corps_page.cc",
+      "tint": "#1a237e",
+      "darkTint": "#9fa8da",
+      "app": {
+        "value": "CC"
+      }
+    },
+    {
+      "value": "infermieri",
+      "translationPrefix": "site.corps_page.ts",
+      "tint": "#00796b",
+      "darkTint": "#4db6ac",
+      "app": {
+        "value": "TS"
+      }
+    }
+  ],
+  "constants": {
+    "App\\Enum\\PremiumPlanEnum::TRIAL_DAYS": 7,
+    "App\\Enum\\PriceOfferEnum::LIFETIME_DAYS": 90,
+    "App\\Enum\\InviteCodeKindEnum::GROUP_MIN_MEMBERS": 50,
+    "App\\Enum\\FeatureEnum::TRANS_PREFIX": "feature"
+  }
+}

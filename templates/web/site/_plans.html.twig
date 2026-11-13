@@ -1,0 +1,20 @@
+{# The three Premium plans read from the catalog of GET /api/plans, the yearly one highlighted with its monthly equivalent and the saving on twelve monthly payments. #}
+<ul class="plans">
+    {% for plan in plans %}
+        {% set best = plan.code == 'yearly' %}
+        <li class="plan{% if best %} plan--best{% endif %}">
+            {% if best %}<span class="plan__ribbon">{{ 'site.plans.best'|trans({}, 'web', locale) }}</span>{% endif %}
+            <h3 class="plan__name">{{ ('site.plans.' ~ plan.code ~ '.name')|trans({}, 'web', locale) }}</h3>
+            <p class="plan__price">{{ price(plan.amount, locale) }} <small>{{ ('site.plans.' ~ plan.code ~ '.per')|trans({}, 'web', locale) }}</small></p>
+            {% if plan.amount < plan.standardAmount %}<p class="plan__meta"><span class="strike">{{ price(plan.standardAmount, locale) }}</span></p>{% endif %}
+            {% if plan.code == 'yearly' %}
+                {% set saving = ((1 - plan.amount / (monthlyAmount * 12)) * 100)|round(0, 'floor') %}
+                <p class="plan__meta plan__meta--good">{{ 'site.plans.yearly.equivalent'|trans({'%price%': price((plan.amount / 12)|round, locale), '%saving%': saving}, 'web', locale) }}</p>
+            {% endif %}
+            <p class="plan__meta">{{ ('site.plans.' ~ plan.code ~ '.note')|trans({}, 'web', locale) }}</p>
+            {% if plan.trialDays > 0 %}<p class="plan__meta">{{ 'site.plans.trial'|trans({'%days%': plan.trialDays}, 'web', locale) }}</p>{% endif %}
+            <span class="plan__spacer"></span>
+            {% if site.webAppUrl %}<a class="button{% if not best %} button--secondary{% endif %}" href="{{ site.signUpUrl }}">{{ ('site.plans.' ~ plan.code ~ '.cta')|trans({}, 'web', locale) }}</a>{% endif %}
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,16 @@
+app:
+    PS: Polizia di Stato
+    VVF: Vigili del Fuoco
+    CC: Carabinieri
+    TS: Sanità
+    GDF: Guardia di Finanza
+
+role:
+    ROLE_ADMIN: Admin
+    ROLE_USER: User
+
+feature:
+    diary: Diario di giorni, note e attività
+    types: Tipi di attività personali
+    year_banks: Banca ore e giorni
+    reports: Report, export CSV e stima in euro

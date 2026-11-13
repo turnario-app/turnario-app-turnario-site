@@ -1,0 +1,18 @@
+{# Store links. The badges are the official artwork, unaltered, App Store first, same height (store guidelines); without the files they are plain links. #}
+{% set iosBadge = iosStoreUrl ? store_badge('app-store', locale) : null %}
+{% set androidBadge = androidStoreUrl ? store_badge('google-play', locale) : null %}
+{% if iosStoreUrl or androidStoreUrl %}
+    <p class="badges">
+        {% if iosStoreUrl %}
+            {% if iosBadge %}<a class="badge" href="{{ iosStoreUrl }}"><img src="{{ iosBadge }}" alt="{{ 'badges.ios_alt'|trans({}, 'web', locale) }}" height="48"></a>
+            {% else %}<a class="store-link" href="{{ iosStoreUrl }}">{{ 'open_app.ios'|trans({}, 'web', locale) }}</a>{% endif %}
+        {% endif %}
+        {% if androidStoreUrl %}
+            {% if androidBadge %}<a class="badge" href="{{ androidStoreUrl }}"><img src="{{ androidBadge }}" alt="{{ 'badges.android_alt'|trans({}, 'web', locale) }}" height="48"></a>
+            {% else %}<a class="store-link" href="{{ androidStoreUrl }}">{{ 'open_app.android'|trans({}, 'web', locale) }}</a>{% endif %}
+        {% endif %}
+    </p>
+    {% if iosBadge or androidBadge %}
+        <p class="muted trademarks">{% if iosBadge %}{{ 'badges.apple'|trans({}, 'web', locale) }} {% endif %}{% if androidBadge %}{{ 'badges.google'|trans({}, 'web', locale) }}{% endif %}</p>
+    {% endif %}
+{% endif %}

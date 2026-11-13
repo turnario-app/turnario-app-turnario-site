@@ -1,0 +1,63 @@
+{% extends 'web/site/_page.html.twig' %}
+
+{% block title %}{{ 'site.pricing.title'|trans({}, 'web', locale) }}{% endblock %}
+{% block description %}{{ 'site.pricing.description'|trans({'%price%': price(monthlyAmount, locale)}, 'web', locale) }}{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="wrap">
+            <div class="section__head section__head--center reveal">
+                <p class="eyebrow">{{ 'site.nav.pricing'|trans({}, 'web', locale) }}</p>
+                <h1>{{ 'site.pricing.headline'|trans({}, 'web', locale)|raw }}</h1>
+                <p class="lead">{{ 'site.pricing.intro'|trans({'%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_plans.html.twig' %}
+
+            <div class="loyal">
+                <p><strong>{{ 'site.pricing.loyal.title'|trans({}, 'web', locale) }}</strong>
+                {{ 'site.pricing.loyal.body'|trans({
+                    '%first_year%': price(offers.firstYear.amount, locale),
+                    '%yearly%': price(offers.firstYear.renewalAmount, locale),
+                    '%lifetime%': price(offers.lifetime.amount, locale),
+                    '%days%': constant('App\\Enum\\PriceOfferEnum::LIFETIME_DAYS'),
+                }, 'web', locale) }}</p>
+                <p><strong>{{ 'site.pricing.group.title'|trans({}, 'web', locale) }}</strong>
+                {{ 'site.pricing.group.body'|trans({
+                    '%members%': constant('App\\Enum\\InviteCodeKindEnum::GROUP_MIN_MEMBERS'),
+                    '%price%': price(offers.group.amount, locale),
+                }, 'web', locale) }}</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--card" aria-labelledby="compare-title">
+        <div class="wrap">
+            <div class="section__head">
+                <h2 id="compare-title">{{ 'site.pricing.compare.title'|trans({}, 'web', locale) }}</h2>
+                <p class="lead">{{ 'site.pricing.compare.body'|trans({}, 'web', locale) }}</p>
+            </div>
+            <table class="compare">
+                <thead>
+                    <tr><th scope="col">{{ 'site.pricing.compare.feature'|trans({}, 'web', locale) }}</th><th scope="col">Basic</th><th scope="col">Pro</th></tr>
+                </thead>
+                <tbody>
+                    {% for free in ['calendar', 'patterns', 'holidays', 'devices', 'import'] %}
+                        <tr><th scope="row">{{ ('site.pricing.compare.' ~ free)|trans({}, 'web', locale) }}</th><td class="yes" aria-label="{{ 'site.pricing.compare.included'|trans({}, 'web', locale) }}">✓</td><td class="yes" aria-label="{{ 'site.pricing.compare.included'|trans({}, 'web', locale) }}">✓</td></tr>
+                    {% endfor %}
+                    {% for feature in features %}
+                        <tr><th scope="row">{{ (constant('App\\Enum\\FeatureEnum::TRANS_PREFIX') ~ '.' ~ feature.name)|trans({}, 'enums', locale) }}</th><td class="no" aria-label="{{ 'site.pricing.compare.excluded'|trans({}, 'web', locale) }}">–</td><td class="yes" aria-label="{{ 'site.pricing.compare.included'|trans({}, 'web', locale) }}">✓</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="pricing-faq-title">
+        <div class="wrap">
+            <div class="section__head section__head--center">
+                <h2 id="pricing-faq-title">{{ 'site.faq.title'|trans({}, 'web', locale) }}</h2>
+            </div>
+            {% include 'web/site/_faq.html.twig' with {questions: ['free', 'trial', 'cancel', 'payment', 'loyal']} %}
+        </div>
+    </section>
+{% endblock %}

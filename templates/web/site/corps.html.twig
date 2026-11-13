@@ -1,0 +1,88 @@
+{# Landing page of one corps (/turni-…): the words its people search for, the shift patterns ready for them, and where to get the app or join the waiting list. #}
+{% extends 'web/site/_page.html.twig' %}
+
+{% set prefix = landing.translationPrefix %}
+{% set corpsName = ('app.' ~ landing.app.value)|trans({}, 'enums', locale) %}
+
+{% block title %}{{ (prefix ~ '.title')|trans({}, 'web', locale) }}{% endblock %}
+{% block description %}{{ (prefix ~ '.description')|trans({}, 'web', locale) }}{% endblock %}
+
+{% block meta %}
+    {{ parent() }}
+    <script type="application/ld+json">{{ {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        'mainEntity': [1, 2, 3]|map(i => {
+            '@type': 'Question',
+            'name': (prefix ~ '.faq.' ~ i ~ '.q')|trans({}, 'web', locale),
+            'acceptedAnswer': {'@type': 'Answer', 'text': (prefix ~ '.faq.' ~ i ~ '.a')|trans({'%price%': price(monthlyAmount, locale), '%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale)},
+        }),
+    }|json_encode(constant('JSON_UNESCAPED_UNICODE') b-or constant('JSON_UNESCAPED_SLASHES') b-or constant('JSON_HEX_TAG'))|raw }}</script>
+{% endblock %}
+
+{% block content %}
+<div class="corps-page" style="--corps-light: {{ landing.tint }}; --corps-dark: {{ landing.darkTint }}">
+    <section class="hero">
+        <div class="wrap hero__grid">
+            <div class="reveal">
+                <p class="eyebrow">{{ (prefix ~ '.eyebrow')|trans({}, 'web', locale) }}</p>
+                <h1>{{ (prefix ~ '.headline')|trans({}, 'web', locale)|raw }}</h1>
+                <p class="lead">{{ (prefix ~ '.intro')|trans({}, 'web', locale) }}</p>
+                {% include 'web/site/_download.html.twig' %}
+                <p class="muted hero__note">{{ 'site.home.price_note'|trans({'%price%': price(monthlyAmount, locale), '%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_mockup.html.twig' with {selectedCorps: landing.app.value} %}
+        </div>
+    </section>
+
+    <section class="section section--card" aria-labelledby="patterns-title">
+        <div class="wrap rows">
+            <article class="row" id="turnazioni">
+                <div>
+                    <h2 id="patterns-title">{{ (prefix ~ '.patterns.title')|trans({}, 'web', locale) }}</h2>
+                    <p>{{ (prefix ~ '.patterns.body')|trans({}, 'web', locale) }}</p>
+                </div>
+                <ul>
+                    {% for i in 1..4 %}<li>{{ (prefix ~ '.patterns.items.' ~ i)|trans({}, 'web', locale) }}</li>{% endfor %}
+                </ul>
+            </article>
+            <article class="row" id="conti">
+                <div>
+                    <h2>{{ (prefix ~ '.needs.title')|trans({}, 'web', locale) }}</h2>
+                    <p>{{ (prefix ~ '.needs.body')|trans({}, 'web', locale) }}</p>
+                </div>
+                <ul>
+                    {% for i in 1..4 %}<li>{{ (prefix ~ '.needs.items.' ~ i)|trans({}, 'web', locale) }}</li>{% endfor %}
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+        <div class="wrap">
+            <div class="section__head section__head--center">
+                <h2 id="faq-title">{{ 'site.corps_page.faq_title'|trans({'%corps%': corpsName}, 'web', locale) }}</h2>
+            </div>
+            <div class="faq">
+                {% for i in 1..3 %}
+                    <details>
+                        <summary>{{ (prefix ~ '.faq.' ~ i ~ '.q')|trans({}, 'web', locale) }}</summary>
+                        <p>{{ (prefix ~ '.faq.' ~ i ~ '.a')|trans({'%price%': price(monthlyAmount, locale), '%days%': constant('App\\Enum\\PremiumPlanEnum::TRIAL_DAYS')}, 'web', locale) }}</p>
+                    </details>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="lista" aria-labelledby="waitlist-title">
+        <div class="wrap">
+            <div class="cta">
+                <h2 id="waitlist-title">{{ 'site.corps_page.waitlist.title'|trans({}, 'web', locale) }}</h2>
+                <p>{{ 'site.corps_page.waitlist.body'|trans({'%corps%': corpsName}, 'web', locale) }}</p>
+                <p class="actions"><a class="button" href="{{ path('web_waitlist', {corpo: landing.app.value}) }}#iscriviti">{{ 'site.corps_page.waitlist.button'|trans({}, 'web', locale) }}</a></p>
+            </div>
+            <p class="contact"><a href="{{ path('web_features') }}">{{ 'site.home.features.more'|trans({}, 'web', locale) }} ›</a></p>
+        </div>
+    </section>
+</div>
+{% endblock %}

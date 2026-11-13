@@ -1,0 +1,49 @@
+{% extends 'web/site/_page.html.twig' %}
+
+{% block title %}{{ 'site.features_page.title'|trans({}, 'web', locale) }}{% endblock %}
+{% block description %}{{ 'site.features_page.description'|trans({}, 'web', locale) }}{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="wrap">
+            <div class="section__head reveal">
+                <p class="eyebrow">{{ 'site.nav.features'|trans({}, 'web', locale) }}</p>
+                <h1>{{ 'site.features_page.headline'|trans({}, 'web', locale)|raw }}</h1>
+                <p class="lead">{{ 'site.features_page.intro'|trans({}, 'web', locale) }}</p>
+            </div>
+            <div class="rows">
+                {% for row in [
+                    {key: 'calendar', pro: false},
+                    {key: 'diary', pro: true},
+                    {key: 'types', pro: true},
+                    {key: 'year_banks', pro: true},
+                    {key: 'reports', pro: true},
+                    {key: 'earnings', pro: true},
+                    {key: 'devices', pro: false},
+                    {key: 'import', pro: false},
+                    {key: 'privacy', pro: false},
+                ] %}
+                    <article class="row" id="{{ row.key|replace({'_': '-'}) }}">
+                        <div>
+                            <h2>{{ ('site.features.' ~ row.key ~ '.title')|trans({}, 'web', locale) }} <span class="tag{% if row.pro %} tag--pro{% endif %}">{{ row.pro ? 'Pro' : 'Basic' }}</span></h2>
+                            <p>{{ ('site.features.' ~ row.key ~ '.body')|trans({}, 'web', locale) }}</p>
+                        </div>
+                        <ul>
+                            {% for point in 1..3 %}<li>{{ ('site.features.' ~ row.key ~ '.points.' ~ point)|trans({}, 'web', locale) }}</li>{% endfor %}
+                        </ul>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <div class="cta">
+                <h2>{{ 'site.features_page.cta.title'|trans({}, 'web', locale) }}</h2>
+                <p>{{ 'site.features_page.cta.body'|trans({'%price%': price(monthlyAmount, locale)}, 'web', locale) }}</p>
+                <p class="actions"><a class="button" href="{{ path('web_pricing') }}">{{ 'site.features_page.cta.button'|trans({}, 'web', locale) }}</a><a class="button button--secondary" href="{{ path('web_home') }}#scarica">{{ 'site.nav.download'|trans({}, 'web', locale) }}</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

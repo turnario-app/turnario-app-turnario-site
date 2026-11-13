@@ -1,0 +1,34 @@
+{% extends 'web/layout.html.twig' %}
+
+{% block title %}Termini di servizio di Turnario{% endblock %}
+
+{% block body %}
+    <h1>Termini di servizio</h1>
+    {% include 'legal/_draft_notice.html.twig' %}
+
+    <h2>1. Il servizio</h2>
+    <p>Turnario è un'app per calcolare e tenere traccia dei propri turni di lavoro, delle attività svolte e dei relativi conteggi. È pensata per il personale di Polizia di Stato, Vigili del Fuoco, Carabinieri e altri corpi che lavorano su turni, ma non è un'app ufficiale di nessuna amministrazione.</p>
+
+    <h2>2. L'account</h2>
+    <p>Per usare Turnario serve un account, creato con email e password oppure con Apple o Google. Sei responsabile della riservatezza delle tue credenziali e di quello che succede con il tuo account. Puoi cancellare l'account in qualsiasi momento dall'app: la cancellazione è definitiva e rimuove tutti i tuoi dati.</p>
+
+    <h2>3. Calcoli e dati</h2>
+    <p>Turni, festività, banche ore e report sono calcolati in base alle informazioni che inserisci e alle turnazioni che scegli. Facciamo il possibile perché siano corretti, ma non sostituiscono gli atti ufficiali del tuo ufficio: controllali sempre prima di usarli per scopi amministrativi o economici.</p>
+
+    <h2>4. Piano Basic e Premium</h2>
+    <p>Il piano Basic è gratuito. Il piano Premium sblocca funzioni aggiuntive con un abbonamento mensile o annuale, oppure con un acquisto una tantum, ai prezzi mostrati nell'app al momento dell'acquisto. La prova gratuita di 7 giorni spetta una sola volta per utente. Gli abbonamenti si rinnovano automaticamente fino alla disdetta, che si fa dove sono stati acquistati (App Store, Google Play o il portale di pagamento indicato nell'app). Alla scadenza del Premium i tuoi dati restano consultabili e non vengono cancellati.</p>
+
+    <h2>5. Uso corretto</h2>
+    <p>Non usare Turnario per attività illecite, per accedere ai dati di altri utenti o per sovraccaricare il servizio. Possiamo sospendere gli account che violano questi termini.</p>
+
+    <h2>6. Disponibilità</h2>
+    <p>Il servizio è offerto così com'è. Possono esserci interruzioni per manutenzione o problemi tecnici; ti consigliamo di scaricare periodicamente una copia dei tuoi dati dall'app.</p>
+
+    <h2>7. Modifiche</h2>
+    <p>Se questi termini cambiano, l'app ti mostrerà la nuova versione e ti chiederà di accettarla prima di continuare.</p>
+
+    <h2>8. Legge applicabile</h2>
+    <p>Questi termini sono regolati dalla legge italiana. Restano salvi i diritti che la legge riconosce ai consumatori.</p>
+
+    <p class="muted">Leggi anche l'<a href="{{ path('web_privacy') }}">informativa sulla privacy</a>.</p>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'web/site/_page.html.twig' %}
+
+{% block title %}{{ 'site.support.title'|trans({}, 'web', locale) }}{% endblock %}
+{% block description %}{{ 'site.support.description'|trans({}, 'web', locale) }}{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="wrap">
+            <div class="section__head section__head--center reveal">
+                <p class="eyebrow">{{ 'site.nav.support'|trans({}, 'web', locale) }}</p>
+                <h1>{{ 'site.support.headline'|trans({}, 'web', locale) }}</h1>
+                <p class="lead">{{ 'site.support.intro'|trans({}, 'web', locale) }}</p>
+            </div>
+            {% include 'web/site/_faq.html.twig' with {questions: ['free', 'pattern', 'devices', 'import', 'trial', 'cancel', 'payment', 'loyal', 'data', 'delete']} %}
+            <div class="contact">
+                <h2>{{ 'site.support.contact.title'|trans({}, 'web', locale) }}</h2>
+                {% if site.supportEmail %}
+                    <p class="lead">{{ 'site.support.contact.body'|trans({}, 'web', locale) }}</p>
+                    <p class="actions" style="justify-content: center"><a class="button" href="mailto:{{ site.supportEmail }}">{{ site.supportEmail }}</a></p>
+                {% endif %}
+                <p class="muted">{{ 'site.support.contact.delete'|trans({}, 'web', locale) }} <a href="{{ path('web_delete_account') }}">{{ 'site.footer.delete_account'|trans({}, 'web', locale) }}</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
